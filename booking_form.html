@@ -1,25 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>Drive Smart Car Booking Form</title>
-    <link rel ="stylesheet" href = "css/styles.css">
+    
     <link rel="stylesheet" type="text/css" href="css/jquery-gallery.css">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
-
-	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
-
-	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
 
-	<!-- Custom stlylesheet -->
+	<link type="text/css" rel ="stylesheet" href = "css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,34 +31,30 @@
             <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
                 <img src="images/Drive Smart Logo.png" alt="A1 Telecom" width="80" height="80">
                 </a>
-            <!-- <img src="images/Drive Smart Logo.png"> -->
        </div>
         <label for ="btn" class ="icon">
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-        <h4 class="welcome">Welcome John</h4>
-        <br>
-        <ul style="z-index: 1000;">
-           <li>
-                <a href ="#">Book Vehicle</a>
-            <ul>
-                <li><a href ="#">Car</a></li>
-                <li><a href ="#">SUV</a></li>
-                <li><a href ="#">Van</a></li>
-              
-        </ul>
-      
-    </li>
-    <li>
-        <a href = "/booking_form.html">Bookings</a>
-
-      </li>
-      <li><a href ="#">About Us</a></li>
-      <li><a href ="#">Contact Us</a></li>
-      <li><a href ="#">SIGN IN / JOIN</a></li>
-      </ul>
-    </div>
+			<h4 class="welcome">Welcome John</h4>
+			<br>
+			<ul style="z-index: 1000;">
+				<li>
+					<a href ="#">Book Vehicle</a>
+					<ul>
+						<li><a href ="#">Car</a></li>
+						<li><a href ="#">SUV</a></li>
+						<li><a href ="#">Van</a></li>         
+					</ul>     
+				</li>
+				<li>
+					<a href = "/booking_form.html">Bookings</a>
+				</li>
+				<li><a href ="#">About Us</a></li>
+				<li><a href ="#">Contact Us</a></li>
+				<li><a href ="#">SIGN IN / JOIN</a></li>
+			</ul>
+		</div>
     </nav>
 
 	<div id="booking" class="section">
@@ -110,7 +100,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<span class="form-label">Hour</span>
+										<span class="form-label">Minute</span>
 										<select class="form-control">
 											<option>00</option>
 											<option>05</option>
@@ -158,7 +148,7 @@
 									<div class="form-btn">
 										<button class="submit-btn">Cancel Booking</button>
 									</div>
-									<p id="result">Test</p>
+									
 								</div>
 								<div class="col-md-3"></div>
 							</div>
@@ -168,12 +158,7 @@
 			</div>
 		</div>
 	</div>
-<script>
-	// Store
-	sessionStorage.setItem("lastname", "Smith");
-	// Retrieve
-	document.getElementById("result").innerHTML = sessionStorage.getItem("lastname");
-</script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</body>
 
 </html>
