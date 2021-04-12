@@ -35,53 +35,36 @@
 	<nav>
         <div class ="logo"> 
             <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
-				<img src="images/Drive Smart Logo.png" alt="A1 Telecom" width="80" height="80">
-			</a>
+                <img src="images/Drive Smart Logo.png" alt="A1 Telecom" width="80" height="80">
+                </a>
             <!-- <img src="images/Drive Smart Logo.png"> -->
        </div>
         <label for ="btn" class ="icon">
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-			<h4 class="welcome">Welcome John</h4>
-			<br>
-			<ul>
-				<li>
-					<a href ="#">Vehicles</a>
-					<ul>
-						<li><a href ="#">Car</a></li>
-						<li><a href ="#">SUV</a></li>
-						<li><a href ="#">Van</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href = "/booking_form.html">Online Booking</a>
-			<ul>
-				
-				<li>
-					<a href ="#">Book</a>
-				<ul>
-					<li><a href ="#">Hourly</a></li>
-					<li><a href ="#">Daily</a></li>
-					<li><a href ="#">Monthly</a></li>
-				</ul>
-				</li>
-				<li><a href ="#" >Retrieve</a>
-					<ul>
-						<li><a href ="#">View</a></li>
-						<li><a href ="#">Modify</a></li>
-						<li><a href ="#">Cancel</a></li>
-					</ul>
-				</li>
-				
-			</ul>
+        <h4 class="welcome">Welcome John</h4>
+        <br>
+        <ul style="z-index: 1000;">
+           <li>
+                <a href ="#">Book Vehicle</a>
+            <ul>
+                <li><a href ="#">Car</a></li>
+                <li><a href ="#">SUV</a></li>
+                <li><a href ="#">Van</a></li>
+              
+        </ul>
+      
+    </li>
+    <li>
+        <a href = "/booking_form.html">Bookings</a>
 
-			</li>
-			<li><a href ="#">About Us</a></li>
-			<li><a href ="#">Contact Us</a></li>
-			<li><a href ="#">SIGN IN / JOIN</a></li>
-			</ul>
-		</div>
+      </li>
+      <li><a href ="#">About Us</a></li>
+      <li><a href ="#">Contact Us</a></li>
+      <li><a href ="#">SIGN IN / JOIN</a></li>
+      </ul>
+    </div>
     </nav>
 
 	<div id="booking" class="section">
@@ -91,7 +74,7 @@
 					<div class="booking-form">
 						<form>
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-12">
 									<div class="form-group">
 										<span class="form-label">Full Name</span>
 										<input class="form-control" type="text" placeholder="Full name">
@@ -99,7 +82,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Pick-up</span>
 										<input class="form-control" type="date" required>
@@ -147,7 +130,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="form-group">
-										<span class="form-label">AM/PM</span>
+										<span class="form-label" style="font-size:xx-small;">AM/PM</span>
 										<select class="form-control">
 											<option>AM</option>
 											<option>PM</option>
@@ -157,7 +140,7 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-6">
+								<div class="col-md-12">
 									<div class="form-group">
 										<span class="form-label">Return</span>
 										<input class="form-control" type="date" required>
@@ -165,6 +148,7 @@
 								</div>
 							</div>
 							<div class="row">
+								<div class="col-md-3"></div>
 								<div class="col-md-3">
 									<div class="form-btn">
 										<button class="submit-btn">Modify Booking</button>
@@ -174,7 +158,9 @@
 									<div class="form-btn">
 										<button class="submit-btn">Cancel Booking</button>
 									</div>
+									<p id="result">Test</p>
 								</div>
+								<div class="col-md-3"></div>
 							</div>
 						</form>
 					</div>
@@ -182,6 +168,12 @@
 			</div>
 		</div>
 	</div>
+<script>
+	// Store
+	sessionStorage.setItem("lastname", "Smith");
+	// Retrieve
+	document.getElementById("result").innerHTML = sessionStorage.getItem("lastname");
+</script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>
