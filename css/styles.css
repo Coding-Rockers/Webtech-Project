@@ -51,7 +51,7 @@ nav ul li a {
   color: white;
   text-decoration: none;
   line-height: 70px;
-  font-size: 16px;
+  font-size: 13px;
   padding: 8px 15px;
 }
 nav ul li a:hover {
@@ -482,9 +482,12 @@ body.is-touch .tiles article .content {
   .tiles article {
     width: 100%;
     margin: 1.25em 0 0 0;
+    
   }
 }
 
 .h2 {
   margin-bottom: 15px;
 }
+
+
