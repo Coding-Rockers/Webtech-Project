@@ -31,25 +31,33 @@
 				</div>
 			</div>
 			<div class="card-body">
+                <span class="text-red" id="login_error_msg"></span>
 				<form>
-					<div class="input-group form-group">
+                    
+                    <div class="form-group">
+					<div class="input-group ">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
-						
+						<input type="text" id="email" class="form-control" placeholder="email">
 					</div>
-					<div class="input-group form-group">
+                    <span class="text-red" id="email_msg"></span>
+                </div>
+                    <div class="form-group">
+					<div class="input-group ">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" id="password" class="form-control" placeholder="password">
 					</div>
+                    <span class="text-red" id="password_msg"></span>
+                </div>
+                    
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn">
+						<input type="submit" id="login_btn" value="Login" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
@@ -65,21 +73,83 @@
 	</div>
 </div>
 <script>
-    $("div.card").on("mouseenter", function () {
-        debugger;
-        $("div.card").animate({height: '+= 50px',
-                width: '+=50px',
-                borderRadius: '3%'
-            },2000);
-}
-).on("mouseleave", function () {
-        debugger;
-        $("div.card").animate({height: '-= 50px',
-                width: '-=50px',
-                borderRadius: '2%'
-            },2000);
-}
-);
+    var login_data = [{firstname:"Jane", lastname:"Headen", email:"jane@mail.com", password:"Jane123"},
+                        {firstname:"Mary", lastname:"Smith", email:"mary@mail.com", password:"Mary123"},
+                        {firstname:"Adam", lastname:"Johnson", email:"adam@mail.com", password:"Adam123"},
+                        {firstname:"Tom", lastname:"Edison", email:"tom@mail.com", password:"Tom123"},
+                        {firstname:"Susan", lastname:"Potter", email:"susan@mail.com", password:"Susan123"},
+                        {firstname:"Lily", lastname:"Patt", email:"lily@mail.com", password:"Lily123"},
+                    ];
+     $("#login_btn").on("click", function () {
+         debugger;
+         event.preventDefault();
+         $("#email").css('border-color','black');
+         $("#password").css('border-color','black');
+         $("#email_msg").html('');
+         $("#password_msg").html('');
+         $('#login_error_msg').html('')
+
+        email = $("#email").val();
+        password = $("#password").val();
+        var isValid = true
+
+        if(email == "" || email == undefined){
+            $("#email").css('border-color','red');
+            $("#email_msg").html('Please enter email!!');
+            isValid = false
+        }
+
+        if(password == "" || password == undefined){
+            $("#password").css('border-color','red');
+            $("#password_msg").html('Please enter password!!');
+            isValid = false
+        }
+
+        if(isValid){
+            isValid = false;
+            var i;
+            for ( i= 0; i < login_data.length; i++) {
+                if (login_data[i].email == email){
+                    if(login_data[i].password == password){
+                            isValid = true;
+                            break;
+                        }
+                        else{
+
+                            isValid = false;
+                            break;
+                        }
+                }
+            }
+            
+            if(isValid){
+                sessionStorage.setItem('email',login_data[i].email)
+                sessionStorage.setItem('fullname',login_data[i].firstname + " " + login_data[i].lastname)
+                window.location.replace("index.html");
+            }
+            else{
+                $('#login_error_msg').html('Invalid Username or Password!!')
+            }
+            
+        }
+
+
+     });
+//     $("div.card").on("mouseenter", function () {
+//         debugger;
+//         $("div.card").animate({height: '+= 50px',
+//                 width: '+=50px',
+//                 borderRadius: '3%'
+//             },2000);
+// }
+// ).on("mouseleave", function () {
+//         debugger;
+//         $("div.card").animate({height: '-= 50px',
+//                 width: '-=50px',
+//                 borderRadius: '2%'
+//             },2000);
+// }
+// );
 </script>
 </body>
 </html>

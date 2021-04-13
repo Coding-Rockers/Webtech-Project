@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-gallery.css">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -24,7 +24,7 @@
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-        <h4 class="welcome">Welcome John</h4>
+        <h4 class="welcome" id="welcome_msg">Welcome John</h4>
         <br>
         <ul style="z-index: 1000;">
            <li>
@@ -39,25 +39,14 @@
       
     </li>
     <li>
-<<<<<<< HEAD
-        <a href = "#">Bookings</a>
-
-    </li>
-    <li><a href ="#">About Us</a></li>
-    <li><a href ="#">Contact Us</a></li>
-    <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
-    </ul>
-  </div>
-=======
         <a href = "booking_form.html">Manage Booking</a>
 
       </li>
       <li><a href ="#">About Us</a></li>
       <li><a href ="#">Contact Us</a></li>
-      <li><a href ="#">SIGN IN / JOIN</a></li>
+      <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
       </ul>
     </div>
->>>>>>> 155025192d5593bea074c09003b77c810ad04a11
     </nav>
 <div>
  
@@ -145,6 +134,14 @@
   </section>
   </div>
 </div>
+<script>
+  $(document).ready(function(){
+    var fullname = sessionStorage.getItem('fullname');
+    if(fullname != undefined || fullname != ""){
+      $('#welcome_msg').html('Welcome ' + fullname);
+    }
+  });
+</script>
 <!-- <script>
 var slideIndex = 0;
 showSlides();

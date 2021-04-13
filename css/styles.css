@@ -573,3 +573,8 @@ input:focus {
 .links a {
   margin-left: 4px;
 }
+
+.text-red {
+  color: red;
+  font-weight: bold;
+}
