@@ -25,7 +25,7 @@
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-        <h4 class="welcome" id="welcome_msg">Welcome John</h4>
+        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
         <br>
         <ul style="z-index: 1000;">
            <li>
@@ -52,9 +52,6 @@
     </div>
     </nav>
 <div>
- 
-  
-
 <div class="slideshow-container">
 
   <ul class="gallery-slideshow">
@@ -144,10 +141,12 @@
 
 <script>
   $(document).ready(function(){
+    debugger;
     var fullname = sessionStorage.getItem('fullname');
-    if(fullname != undefined || fullname != ""){
+    if(fullname != undefined && fullname != "" && fullname != null){
       $('#welcome_msg').html('Welcome ' + fullname);
     }
+    
   });
 </script>
 <!-- <script>
