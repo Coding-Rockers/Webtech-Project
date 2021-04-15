@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Sign Up</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -21,7 +21,7 @@
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
 			<div class="card-header">
-				<h3>Sign In</h3>
+				<h3>Sign Up</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
 					<span><i class="fab fa-google-plus-square"></i></span>
@@ -29,9 +29,26 @@
 				</div>
 			</div>
 			<div class="card-body">
-                <span class="text-red" id="login_error_msg"></span>
+                <span class="text-red" id="signup_error_msg"></span>
 				<form>
-                    
+                    <div class="form-group">
+                        <div class="input-group ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" id="firstname" class="form-control" placeholder="firstname">
+                        </div>
+                        <span class="text-red" id="firstname_msg"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group ">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" id="lastname" class="form-control" placeholder="lastname">
+                        </div>
+                        <span class="text-red" id="lastname_msg"></span>
+                    </div>
                     <div class="form-group">
 					<div class="input-group ">
 						<div class="input-group-prepend">
@@ -50,20 +67,24 @@
 					</div>
                     <span class="text-red" id="password_msg"></span>
                 </div>
-<!--                     
-					<div class="row align-items-center remember">
-						<input type="checkbox">Remember Me
-					</div> -->
+                <div class="form-group">
+					<div class="input-group ">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" id="confirm_password" class="form-control" placeholder="Confirm password">
+					</div>
+                    <span class="text-red" id="confirm_password_msg"></span>
+                </div>
 					<div class="form-group">
-						<input type="submit" id="login_btn" value="Login" class="btn float-right login_btn">
+						<input type="submit" id="signup_btn" value="Sign Up" class="btn float-right login_btn">
 					</div>
 				</form>
 			</div>
 			<div class="card-footer">
 				<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="SignUp.html">Sign Up</a>
+					Already have an account?<a href="SignIn.html">Sign In</a>
 				</div>
-				
 			</div>
 		</div>
 	</div>
@@ -76,23 +97,39 @@
                         {firstname:"Susan", lastname:"Potter", email:"susan@mail.com", password:"Susan123"},
                         {firstname:"Lily", lastname:"Patt", email:"lily@mail.com", password:"Lily123"},
                     ];
-                
-    if(sessionStorage.getItem('login_data') == null || sessionStorage.getItem('login_data') == undefined){
-            sessionStorage.setItem('login_data', JSON.stringify(login_data))
-    }
-
-    $("#login_btn").on("click", function () {
+     $("#signup_btn").on("click", function () {
          debugger;
          event.preventDefault();
+         $("#firstname").css('border-color','black');
+         $("#lastname").css('border-color','black');
          $("#email").css('border-color','black');
          $("#password").css('border-color','black');
+         $("#confirm_password").css('border-color','black');
+         $("#firstname_msg").html('');
+         $("#lastname_msg").html('');
          $("#email_msg").html('');
          $("#password_msg").html('');
-         $('#login_error_msg').html('')
+         $("#confirm_password_msg").html('');
+         $('#signup_error_msg').html('')
 
+        firstname = $("#firstname").val();
+        lastname = $("#lastname").val();
         email = $("#email").val();
         password = $("#password").val();
+        confirm_password = $("#confirm_password").val();
         var isValid = true
+
+        if(firstname == "" || firstname == undefined){
+            $("#firstname").css('border-color','red');
+            $("#firstname_msg").html('Please enter firstname!!');
+            isValid = false
+        }
+
+        if(lastname == "" || lastname == undefined){
+            $("#lastname").css('border-color','red');
+            $("#lastname_msg").html('Please enter lastname!!');
+            isValid = false
+        }
 
         if(email == "" || email == undefined){
             $("#email").css('border-color','red');
@@ -106,53 +143,44 @@
             isValid = false
         }
 
+        if(confirm_password == "" || confirm_password == undefined){
+            $("#confirm_password").css('border-color','red');
+            $("#confirm_password_msg").html('Please confirm your password!!');
+            isValid = false
+        }
+        else if(confirm_password != password){
+            $("#confirm_password").css('border-color','red');
+            $("#confirm_password_msg").html('Confirm password does not match!!');
+            isValid = false
+        }
+
         if(isValid){
-            debugger;
-            isValid = false;
-            login_data = JSON.parse(sessionStorage.getItem('login_data'));
+            
             var i;
             for ( i= 0; i < login_data.length; i++) {
                 if (login_data[i].email == email){
-                    if(login_data[i].password == password){
-                            isValid = true;
-                            break;
-                        }
-                        else{
-
-                            isValid = false;
-                            break;
-                        }
+                        $('#signup_error_msg').html('Email already exist!!');
+                        isValid = false;
+                        break;
                 }
             }
             
             if(isValid){
+                debugger;
+                var userdata = {firstname:firstname, lastname:lastname, email:email, password:password}
+                login_data.push(userdata)
+
+
+                sessionStorage.setItem('login_data',JSON.stringify(login_data))
                 sessionStorage.setItem('email',login_data[i].email)
                 sessionStorage.setItem('fullname',login_data[i].firstname + " " + login_data[i].lastname)
                 window.location.replace("index.html");
-            }
-            else{
-                $('#login_error_msg').html('Invalid Username or Password!!')
-            }
-            
+            }            
         }
 
 
      });
-//     $("div.card").on("mouseenter", function () {
-//         debugger;
-//         $("div.card").animate({height: '+= 50px',
-//                 width: '+=50px',
-//                 borderRadius: '3%'
-//             },2000);
-// }
-// ).on("mouseleave", function () {
-//         debugger;
-//         $("div.card").animate({height: '-= 50px',
-//                 width: '-=50px',
-//                 borderRadius: '2%'
-//             },2000);
-// }
-// );
+
 </script>
 </body>
 </html>
