@@ -16,8 +16,9 @@
   <nav>
     <div class ="logo"> 
         <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
-            <img src="images/Drive Smart Logo.png" alt="A1 Telecom" width="80" height="80">
-            </a>
+            <img src="images/Drive Smart Logo.png" alt="A1 Telecom" width="80" height="40">
+        </a>
+        <!-- <img src="images/Drive Smart Logo.png"> -->
     </div>
     <label for ="btn" class ="icon">
         <span class ="fa fa-bars"></span>
@@ -27,18 +28,18 @@
       <br>
       <ul style="z-index: 1000;">
         <li>
-          <a href ="#">Book Vehicle</a>
+          <a href ="#">Book a Vehicle</a>
           <ul>
-            <li><a href ="#">Car</a></li>
-            <li><a href ="#">SUV</a></li>
-            <li><a href ="#">Van</a></li>         
-          </ul>     
+            <li><a class="nav-link" href ="car.html">Car</a></li>
+            <li><a class="nav-link" href ="suv.html">SUV</a></li>
+            <li><a class="nav-link" href ="van.html">Van</a></li>
+          </ul>
         </li>
         <li>
-          <a href = "/booking_form.html">Manage Bookings</a>
+          <a href = "booking_form.html">Manage Booking</a>
         </li>
-        <li><a href ="#">About Us</a></li>
-        <li><a href ="#">Contact Us</a></li>
+        <li><a href ="Aboutus.html">About Us</a></li>
+        <li><a href ="Contactus.html">Contact Us</a></li>
         <li><a href ="#">SIGN IN / JOIN</a></li>
       </ul>
     </div>
@@ -147,7 +148,7 @@ function showSlides() {
   }
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
+  setTimeout(showSlides, 9000); // Change image every 2 seconds
 }
 </script> -->
 
