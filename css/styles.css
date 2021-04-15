@@ -46,7 +46,6 @@ nav ul li {
   display: inline-block;
   background: #0c3c64;
   margin: 0 5px;
-  
 }
 nav ul li a {
   color: white;
@@ -489,6 +488,7 @@ body.is-touch .tiles article .content {
 .h2 {
   margin-bottom: 15px;
 }
+<<<<<<< HEAD
 
 html,
 body.signin {
@@ -579,3 +579,5 @@ input:focus {
   color: red;
   font-weight: bold;
 }
+=======
+>>>>>>> d71f634937b4ad06ddfb6978ff56cb64c52c826a
