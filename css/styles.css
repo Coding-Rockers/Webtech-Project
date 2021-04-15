@@ -492,7 +492,7 @@ body.is-touch .tiles article .content {
 
 html,
 body.signin {
-  background-image: url("/Webtech-Project/images/Lamborghini\ New\ Sian\ Roadster.jpg");
+  background-image: url("../images/Lamborghini\ New\ Sian\ Roadster.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
