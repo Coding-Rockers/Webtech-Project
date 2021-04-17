@@ -282,6 +282,7 @@
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="scripts/booking.js"></script>
 <script>
     const openModalButtons = document.querySelectorAll('[data-modal-target]')
     const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -321,18 +322,7 @@
         overlay.classList.remove('active')
     }
 
-    $(document).ready(function(){
-        $('.booking').on('click',function(){
-            debugger;
-            var carname = $(this).parent().siblings().children('.name').text();
-            var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
-            var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
-            var weeklylyrate = rate[1].slice(1,rate[1].indexOf('/'))
-            var monthlyrate = rate[2].slice(1,rate[2].indexOf('/'))
-            var car_data = {carname:carname,dailyrate:dailyrate,weeklylyrate:weeklylyrate ,monthlyrate:monthlyrate }
-            sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
-        })
-    });
+    
 
 </script>   
 </body>
