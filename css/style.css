@@ -23,7 +23,7 @@
 	background: rgba(0, 0, 0, 0.7);
 	padding: 40px;
 	border-radius: 6px;
-	display:none;
+	/* display:none; */
 }
 
 .booking-form .form-group {
