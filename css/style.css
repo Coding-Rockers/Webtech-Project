@@ -173,3 +173,20 @@
 .booking-form .submit-btn:focus {
 	opacity: 0.9;
 }
+
+#modifyBookingbtn{
+	display:none;
+}
+
+#cancelBookingbtn{
+	display:none;
+}
+
+#saveBookingbtn{
+	display:none;
+}
+
+.text-red {
+	color: red;
+	font-weight: bold;
+}

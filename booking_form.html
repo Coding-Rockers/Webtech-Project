@@ -19,7 +19,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script>
         $(document).ready(function () {	
-			$('#bookingForm').fadeIn(4000, function () {});
+			$('#bookingForm').fadeIn(3000, function () {});
         });
     </script>
 
@@ -44,23 +44,23 @@
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-			<h4 id="welcome" class="welcome">Welcome </h4>
+			<h4 class="welcome" id="welcome_msg"></h4>
 			<br>
 			<ul style="z-index: 1000;">
 				<li>
 					<a href ="#">Book Vehicle</a>
 					<ul>
-						<li><a href ="#">Car</a></li>
-						<li><a href ="#">SUV</a></li>
-						<li><a href ="#">Van</a></li>         
+						<li><a href ="car.html">Car</a></li>
+						<li><a href ="suv.html">SUV</a></li>
+						<li><a href ="van.html">Van</a></li>         
 					</ul>     
 				</li>
 				<li>
 					<a href = "/booking_form.html">Manage Bookings</a>
 				</li>
-				<li><a href ="#">About Us</a></li>
-				<li><a href ="#">Contact Us</a></li>
-				<li><a href ="#">SIGN IN / JOIN</a></li>
+				<li><a href ="Aboutus.html">About Us</a></li>
+				<li><a href ="Contactus.html">Contact Us</a></li>
+				<li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
 			</ul>
 		</div>
     </nav>
@@ -69,6 +69,7 @@
 		<div class="section-center">
 			<div class="container">
 				<div class="row">
+					<span class="text-red" id="booking_msg"></span>
 					<div id="bookingForm" class="booking-form">
 						<form>
 							<div class="row">
@@ -81,7 +82,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Full Name</span>
-										<input id="fullname" class="form-control" type="text" placeholder="Full name">
+										<input id="fullname" class="form-control" type="text" placeholder="Full name" readonly>
 									</div>
 								</div>
 							</div>
@@ -89,10 +90,10 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Pick-up</span>
-										<input id="pickup_date" class="form-control" type="date">
+										<input id="pickup_date" class="form-control" type="date" readonly>
 									</div>
 								</div>
-								<div class="col-md-2">
+								<div class="col-md-2" >
 									<div class="form-group">
 										<span class="form-label">Hour</span>
 										<select id="hour" class="form-control">
@@ -147,30 +148,46 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<span class="form-label">Return</span>
-										<input id="return_date" class="form-control" type="date" >
+										<input id="return_date" class="form-control" type="date" readonly>
 									</div>
 								</div>
 							</div>
 							<div class="row">
-								<div class="col-md-2"></div>
-								<div class="col-md-8">
-									<div class="col-md-4">
+								<div class="col-md-12">
+									<div class="col-md-2"></div>
+									<div id="viewBookingbtn" class="col-md-8">
 										<div class="form-btn">
-											<button class="submit-btn" >View Booking</button>
+											<input type="button" class="submit-btn" value="View Booking" onclick="viewBooking()"/>
 										</div>
 									</div>
-									<div class="col-md-4">
+								</div>
+
+								<div class="col-md-12">
+									<div class="col-md-2"></div>
+									<div id="modifyBookingbtn" class="col-md-8">
 										<div class="form-btn">
-											<input type="submit" class="submit-btn" onclick="modifyBooking()" value="Modify Booking"/>
+											<input type="button" class="submit-btn" onclick="modifyBooking()" value="Modify This Booking"/>
 										</div>
 									</div>
-									<div class="col-md-4">
+								</div>
+
+								<div class="col-md-12">
+									<div class="col-md-2"></div>
+									<div id="saveBookingbtn" class="col-md-8">
+										<div class="form-btn">
+											<input type="submit" class="submit-btn" onclick="saveBooking()" value="Save Changes"/>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-md-12">
+									<div class="col-md-2"></div>
+									<div id="cancelBookingbtn" class="col-md-8">
 										<div class="form-btn">
 											<button class="submit-btn" onclick="cancelBooking()">Cancel Booking</button>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-2"></div>
 							</div>
 						</form>
 					</div>
@@ -178,39 +195,78 @@
 			</div>
 		</div>
 	</div>
+<script>
+	$(document).ready(function(){
+		var fullname = sessionStorage.getItem('fullname');
+		if(fullname != undefined || fullname != ""){
+		$('#welcome_msg').html('Welcome ' + fullname);
+		}
+	});
+</script>
+
+
 
 <script>
-	sessionStorage.setItem("fullname", "John Doe");
-	sessionStorage.setItem("booking_reference", "12345abcde");
-	sessionStorage.setItem("pickup_date", new Date(Date.now()).toISOString().slice(0, 10));
-	sessionStorage.setItem("return_date", new Date("2021-05-25").toISOString().slice(0, 10));
-	sessionStorage.setItem("booking_name", "James Doe");
-	sessionStorage.setItem("hour", "2");
-	sessionStorage.setItem("minute", "00");
-	sessionStorage.setItem("am_pm", "PM");
+    var booking_data = [{"12345qwerty":{booking_reference: "12345qwerty", fullname: "Mike Brown", pickup_date: new Date("2021-05-25").toISOString().slice(0, 10), hour: "2", minute: "00", am_pm: "PM", return_date: new Date("2021-05-31").toISOString().slice(0, 10)}},
+						{"54321asdfgh":{booking_reference: "54321asdfgh", fullname: "Jane Richard", pickup_date: new Date("2021-04-17").toISOString().slice(0, 10), hour: "10", minute: "30", am_pm: "AM", return_date: new Date("2021-04-20").toISOString().slice(0, 10)}}
+	];
 </script>
+
 <script>
-	if(sessionStorage.getItem("fullname")) {
-		document.getElementById("welcome").innerHTML += sessionStorage.getItem("fullname");
+	function viewBooking() {
+		$('#booking_msg').html('');
+		var booking_reference = document.getElementById("booking_reference").value;
+		var isExist = false;
+		for (i in booking_data){
+			Object.keys(booking_data[i]).forEach(k => {
+				if (k == booking_reference){
+					isExist = true;
+					document.getElementById("fullname").value = booking_data[i][k].fullname;
+					document.getElementById("pickup_date").value = booking_data[i][k].pickup_date;
+					document.getElementById("hour").value = booking_data[i][k].hour;
+					document.getElementById("minute").value = booking_data[i][k].minute;
+					document.getElementById("am_pm").value = booking_data[i][k].am_pm;
+					document.getElementById("return_date").value = booking_data[i][k].return_date;
+				}
+			});
+		}
+		if (isExist){
+			document.getElementById("viewBookingbtn").style.display = "none";
+			document.getElementById("modifyBookingbtn").style.display = "inline";
+			document.getElementById("cancelBookingbtn").style.display = "inline";
+		}
+		else{
+			$('#booking_msg').html('That booking reference was not found!!')
+		}
 	}
-	document.getElementById("fullname").value = sessionStorage.getItem("booking_name");
-	document.getElementById("booking_reference").value = sessionStorage.getItem("booking_reference");
-	document.getElementById("pickup_date").value = sessionStorage.getItem("pickup_date");
-	document.getElementById("hour").value = sessionStorage.getItem("hour");
-	document.getElementById("minute").value = sessionStorage.getItem("minute");
-	document.getElementById("am_pm").value = sessionStorage.getItem("am_pm");
-	document.getElementById("return_date").value = sessionStorage.getItem("return_date");
 </script>
 
 <script>
 	function modifyBooking() {
-		document.getElementById("bookingForm").submit();
+		$('#booking_msg').html('');
+		$('#pickup_date').prop('readonly', false);
+		$('#return_date').prop('readonly', false);
+		$('#fullname').prop('readonly', false);
+		$('#booking_reference').prop('readonly', true);
+		document.getElementById("modifyBookingbtn").style.display = "none";
+		document.getElementById("saveBookingbtn").style.display = "inline";
+	}
+</script>
+
+<script>
+	function saveBooking() {
+		$('#booking_msg').html('');
+		document.getElementById("booking_msg").style.color = "green";
+		$('#booking_msg').html('Booking Modified!')
 	}
 </script>
 
 <script>
 	function cancelBooking() {
+		$('#booking_msg').html('');
 		sessionStorage.clear();
+		document.getElementById("booking_msg").style.color = "green";
+		$('#booking_msg').html('Booking Cancelled!')
 	}
 </script>
 
