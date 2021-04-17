@@ -6,19 +6,37 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.announcement{
-    margin-top: 30px;
-    border-style: solid;
-    padding:10px 10px;
-    width: 900px;
-    color: #fff;
-    margin-left: 300px;
-    border-color:#d3d3e6;
-    background-color: rgb(32, 131, 98);
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5); 
+.flex-containerG{
+    height:200px;
+    border-left: white;
+    margin-top: 10px;
+}
+#img-divG{
+    height: 230px;
+    width: 350px;
+    border: 15px solid rgb(203, 219, 211);
+    margin-left: 280px;
+    margin-top: -200px;
+   
+}
+.textG{
+    
+    background: rgb(203, 219, 211);
+    height: 230px;
+    width: 580px;
+    margin-top: -230px;
+    margin-left: 630px;
+    padding: 25px 25px;
     
 
 }
+
+.textG lu{
+    text-align: left;
+    font-size: 17px;
+    
+}
+
 *::after, *::before{
     box-sizing: border-box;
 }
@@ -37,10 +55,11 @@
    
 }
 .open-button{
-    margin-top: 60px;
+    margin-top: 10px;
     font-size: 14px;
     padding:10px 10px;
     font-weight:600;
+    margin-left: 40px;
     
 }
 
@@ -68,6 +87,7 @@
     background: none;
     font-size: 1.25rem;
     font-weight: bold;
+    color:#fff;
 }
 .modal-body{
     padding:15px 15px;
@@ -81,7 +101,7 @@
     left:0;
     right:0;
     bottom: 0;
-    background-color: rgb(0,0,0,0.7);
+    background-color: rgb(0,0,0,0.75);
     pointer-events: none;
 }
 #overlay.active{
@@ -89,9 +109,6 @@
     pointer-events: all;
 
 }
-
-
-
 html{
     height: 100%;
     display: grid;
@@ -104,7 +121,7 @@ html{
     padding: 0 06px;
     align-items: center;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 60px;
 }
 
 .container2{
