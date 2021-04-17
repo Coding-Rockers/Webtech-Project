@@ -25,7 +25,11 @@
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
+<<<<<<< HEAD
         <h4 class="welcome" id="welcome_msg"></h4>
+=======
+        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
+>>>>>>> 2aeaae4db2ff48d352e7cd8173ad333227f0e4f6
         <br>
         <ul style="z-index: 1000;">
            <li>
@@ -52,9 +56,6 @@
     </div>
   </nav>
 <div>
- 
-  
-
 <div class="slideshow-container">
 
   <ul class="gallery-slideshow">
@@ -144,34 +145,14 @@
 
 <script>
   $(document).ready(function(){
+    debugger;
     var fullname = sessionStorage.getItem('fullname');
-    if(fullname != undefined || fullname != ""){
+    if(fullname != undefined && fullname != "" && fullname != null){
       $('#welcome_msg').html('Welcome ' + fullname);
     }
+    
   });
 </script>
-<!-- <script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 9000); // Change image every 2 seconds
-}
-</script> -->
-
   
 <script type="text/javascript">
 $(function() {
