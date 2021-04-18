@@ -6,39 +6,55 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-.announcement {
-  margin-top: 40px;
-  border-style: solid;
-  padding: 10px 10px;
-  width: 900px;
-  color: #fff;
-  margin-left: 300px;
-  border-color: #d3d3e6;
-  background-color: rgb(32, 131, 98);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+.flex-containerG {
+  height: 200px;
+  border-left: white;
+  margin-top: 10px;
 }
+#img-divG {
+  height: 230px;
+  width: 350px;
+  border: 15px solid rgb(203, 219, 211);
+  margin-left: 280px;
+  margin-top: -200px;
+}
+.textG {
+  background: rgb(203, 219, 211);
+  height: 230px;
+  width: 580px;
+  margin-top: -230px;
+  margin-left: 630px;
+  padding: 25px 25px;
+}
+
+.textG lu {
+  text-align: left;
+  font-size: 17px;
+}
+
 *::after,
 *::before {
   box-sizing: border-box;
 }
 .modal {
   position: fixed;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
   border: 1px solid black;
-  border-radius: 10px;
   z-index: 1;
   background-color: white;
   width: 400px;
   max-width: 80%;
+  font-size: 13px;
 }
 .open-button {
-  margin-top: 60px;
-  font-size: 12px;
-  background: #b6b3b3;
+  margin-top: 10px;
+  font-size: 14px;
   padding: 10px 10px;
+  font-weight: 600;
+  margin-left: 40px;
 }
 
 .modal.active {
@@ -64,6 +80,7 @@
   background: none;
   font-size: 1.25rem;
   font-weight: bold;
+  color: #fff;
 }
 .modal-body {
   padding: 15px 15px;
@@ -77,14 +94,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgb(0, 0, 0, 0.75);
   pointer-events: none;
 }
 #overlay.active {
   opacity: 1;
   pointer-events: all;
 }
-
 html {
   height: 100%;
   display: grid;
@@ -96,7 +112,7 @@ html {
   padding: 0 06px;
   align-items: center;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 60px;
 }
 
 .container2 {
@@ -112,11 +128,10 @@ html {
   margin: 0 20px;
   background: white;
   transition: 0.4s;
-  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.2);
 }
 .card:hover {
   height: 320px;
-  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.5);
 }
 .card .img {
   height: 200px;
@@ -129,26 +144,26 @@ html {
 }
 .card .top-text {
   padding: 5px;
+  background-color: white;
 }
 .card .top-text .name {
   font-size: 25px;
   font-weight: 600;
-  color: #202020;
 }
 .card .top-text p {
   font-size: 20px;
-  font-weight: 600;
-  color: #e74c3c;
+  font-weight: 800;
+  color: rgb(235, 53, 53);
   line-height: 20px;
 }
 .card .bottom-text {
   padding: 0 12px 10px 12px;
   margin-top: 5px;
-  background: white;
   opacity: 0;
   visibility: hidden;
   transition: 0.1s;
   font-size: 13px;
+  background-color: white;
 }
 
 .card:hover .bottom-text {
@@ -171,11 +186,12 @@ html {
 }
 .card .bottom-text .btn a {
   text-decoration: none;
-  background: #e74c3c;
+  background: #ee2812;
   color: #f2f2f2;
   padding: 5px 8px;
   border-radius: 3px;
   transition: 0.2s;
+  font-weight: 700;
 }
 .card .bottom-text .btn a:hover {
   transform: scale(0.9);
