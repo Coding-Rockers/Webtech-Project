@@ -18,7 +18,44 @@
     <link rel="stylesheet" type="text/css" href="css/Signin.css">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
 </head>
-<body class="signin">
+<body class="signup">
+    <nav>
+        <div class ="logo"> 
+            <a class=" mr-4 nav-item " href="index.html">
+
+                <img src="images/logo1.jpg" alt="A1 Telecom" width="120" height="90">
+
+                </a>
+            <!-- <img src="images/Drive Smart Logo.png"> -->
+       </div>
+       
+        <div class="right"> 
+        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
+        <br>
+        <ul style="z-index: 1000;">
+           <li>
+                <a href ="#">Book a Vehicle</a>
+            <ul>
+              <li><a class="" href ="car.html">Car</a></li>
+              
+              <li><a class="" href ="suv.html">SUV</a></li>
+              <li><a class="" href ="van.html">Van</a></li>
+              
+        </ul>
+      
+    </li>
+    <li>
+        <a href = "booking_form.html">Manage Booking</a>
+
+      </li>
+
+      <li><a href ="Aboutus.html">About Us</a></li>
+      <li><a href ="Contactus.html">Contact Us</a></li>
+      <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
+
+      </ul>
+    </div>
+    </nav>
 <div class="container">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
@@ -38,7 +75,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" id="firstname" class="form-control" placeholder="firstname">
+                            <input type="text" id="firstname" class="form-control" placeholder="firstname" autofocus>
                         </div>
                         <span class="text-red" id="firstname_msg"></span>
                     </div>
@@ -100,7 +137,6 @@
                         {firstname:"Lily", lastname:"Patt", email:"lily@mail.com", password:"Lily123"},
                     ];
      $("#signup_btn").on("click", function () {
-         debugger;
          event.preventDefault();
          $("#firstname").css('border-color','black');
          $("#lastname").css('border-color','black');
@@ -168,7 +204,6 @@
             }
             
             if(isValid){
-                debugger;
                 var userdata = {firstname:firstname, lastname:lastname, email:email, password:password}
                 login_data.push(userdata)
 
