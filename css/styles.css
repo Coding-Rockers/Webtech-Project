@@ -127,7 +127,7 @@ nav ul ul ul li {
     cursor: pointer;
   }
   .show:hover {
-    color: cyan;
+    color: rgb(133, 204, 204);
   }
   .icon {
     display: block;
@@ -487,4 +487,74 @@ body.is-touch .tiles article .content {
 
 .h2 {
   margin-bottom: 15px;
+}
+
+.text-red {
+  color: red;
+  font-weight: bold;
+}
+/* .input[type=file] {
+  width: 100%;
+  z-index: 50;
+  height: 25px;
+  cursor: pointer;
+  opacity: 0;
+  border: 1px solid #000;
+} */
+/* .input-group{
+  max-height: 30px;
+}
+  
+
+
+h1 {
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  background: -webkit-linear-gradient(#fff, #999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+h4 {
+  color: lighten(#5c3d86,30%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 3.5rem 0;
+}
+.btn.btn-primary {
+  background-color: $purple;
+  border-color: $purple;
+  outline: none;
+  &:hover {
+    background-color: darken($purple, 10%);
+    border-color: darken($purple, 10%);
+  }
+  &:active, &:focus {
+    background-color: lighten($purple, 5%);
+    border-color: lighten($purple, 5%);
+  }
+} */
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.upload{
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin-left: 12px;
+
+}
+.terms{
+  box-sizing: border-box;
+  background-color:rgb(193, 224, 224);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+
 }
