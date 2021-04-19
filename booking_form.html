@@ -44,11 +44,11 @@
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-			<h4 class="welcome" id="welcome_msg"></h4>
+			<h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
 			<br>
 			<ul style="z-index: 1000;">
 				<li>
-					<a href ="#">Book Vehicle</a>
+					<a href ="#">Book a Vehicle</a>
 					<ul>
 						<li><a href ="car.html">Car</a></li>
 						<li><a href ="suv.html">SUV</a></li>
@@ -144,7 +144,10 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+	crossorigin="anonymous"></script>
+<script src="scripts/booking.js"></script>
 <script>
 	$(document).ready(function(){
 		var fullname = sessionStorage.getItem('fullname');
@@ -152,6 +155,33 @@
 		$('#welcome_msg').html('Welcome ' + fullname);
 		}
 	});
+
+	$(document).ready(function(){
+
+var fullname = sessionStorage.getItem('fullname');
+
+if (fullname != undefined && fullname != "" && fullname != null) {
+	$('#welcome_msg').html('Welcome ' + fullname);
+	$('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+}
+
+$('.booking').on('click', function () {
+	var carname = $(this).parent().siblings().children('.name').text();
+	var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
+	var dailyrate = rate[0].slice(1, rate[0].indexOf('/'));
+	var weeklylyrate = rate[1].slice(1, rate[1].indexOf('/'))
+	var monthlyrate = rate[2].slice(1, rate[2].indexOf('/'))
+	var car_data = { carname: carname, dailyrate: dailyrate, weeklylyrate: weeklylyrate, monthlyrate: monthlyrate }
+	sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
+})
+});
+
+
+function Logout() {
+sessionStorage.removeItem('email')
+sessionStorage.removeItem('fullname')
+window.location.replace("logout.html");
+}
 </script>
 
 <!-- <script>
@@ -285,6 +315,11 @@
 		document.getElementById("booking_msg").style.color = "red";
 		$('#booking_msg').html('Booking Cancelled!')
 	}
+
+
+
+	
+
 </script>
 
 </body>

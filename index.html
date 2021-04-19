@@ -7,9 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drive Smart Car Rental</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/jquery-gallery.css">
   <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> 
   <style>
     .inner-wrapper {
       margin: 0;
@@ -59,16 +61,9 @@
       $('.responsive-testimonals').responsiveTestimonals();
     });
   </script>
-
-     <link rel="stylesheet" href="css/footer.css">
-    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    
-
 </head>
 
 <body>
-
   <nav>
     <div class="logo">
       <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
@@ -78,9 +73,7 @@
       </a>
       <!-- <img src="images/Drive Smart Logo.png"> -->
     </div>
-    <label for="btn" class="icon">
-      <span class="fa fa-bars"></span>
-    </label>
+   
     <div class="right">
       <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
       <br>
@@ -104,41 +97,6 @@
         <li><a href="Aboutus.html">About Us</a></li>
         <li><a href="Contactus.html">Contact Us</a></li>
         <li><a href="SignIn.html">SIGN IN / JOIN</a></li>
-
-    <nav>
-        <div class ="logo"> 
-            <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
-
-                <img src="images/logo1.jpg" alt="A1 Telecom" width="120" height="90">
-
-                </a>
-            <!-- <img src="images/Drive Smart Logo.png"> -->
-       </div>
-        
-        <div class="right"> 
-        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
-        <br>
-        <ul style="z-index: 1000;">
-           <li>
-                <a href ="#">Book a Vehicle</a>
-            <ul>
-              <li><a class="nav-link" href ="car.html">Car</a></li>
-              
-              <li><a class="nav-link" href ="suv.html">SUV</a></li>
-              <li><a class="nav-link" href ="van.html">Van</a></li>
-              
-        </ul>
-      
-    </li>
-    <li>
-        <a href = "booking_form.html">Manage Booking</a>
-
-      </li>
-
-      <li><a href ="Aboutus.html">About Us</a></li>
-      <li><a href ="Contactus.html">Contact Us</a></li>
-      <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
-
 
       </ul>
     </div>
@@ -390,7 +348,48 @@
       </div>
     </div>
   </div>
-  <footer class="footer-distributed">
+
+  <script src="scripts/jquery-gallery.js" type="text/javascript"></script>
+  <script src="https://www.jqueryscript.net/demo/Animated-Headline-Text-jQuery-Textbanner/textbanner.js"></script>
+  <script>
+    $('#textbanner').textbanner();
+  </script>
+  <script>
+    $(document).ready(function () {
+      var fullname = sessionStorage.getItem('fullname');
+      if (fullname != undefined && fullname != "" && fullname != null) {
+        $('#welcome_msg').html('Welcome ' + fullname);
+        $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+      }
+
+    });
+
+    function Logout() {
+      sessionStorage.removeItem('email')
+      sessionStorage.removeItem('fullname')
+      window.location.replace("logout.html");
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(function () {
+      $('.gallery-slideshow').slideshow({
+        interval: 5000
+      });
+    });
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36251023-1']);
+    _gaq.push(['_setDomainName', 'jqueryscript.net']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+<footer class="footer-distributed">
 
   <div class="footer-left">
       <img src="images/logo1.jpg">
@@ -439,84 +438,6 @@
     </div>
   </div>
 </footer>
-
-  <script src="scripts/jquery-gallery.js" type="text/javascript"></script>
-  <script src="https://www.jqueryscript.net/demo/Animated-Headline-Text-jQuery-Textbanner/textbanner.js"></script>
-  <script>
-    $('#textbanner').textbanner();
-  </script>
-  <script>
-    $(document).ready(function () {
-      var fullname = sessionStorage.getItem('fullname');
-      if (fullname != undefined && fullname != "" && fullname != null) {
-        $('#welcome_msg').html('Welcome ' + fullname);
-        $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
-      }
-
-    });
-
-    function Logout() {
-      sessionStorage.removeItem('email')
-      sessionStorage.removeItem('fullname')
-      window.location.replace("logout.html");
-    }
-
-  </script>
-
-  <script type="text/javascript">
-    $(function () {
-      $('.gallery-slideshow').slideshow({
-        interval: 5000
-      });
-    });
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-  </script>
-
-    
-  });
-
-  function Logout(){
-    sessionStorage.removeItem('email')
-    sessionStorage.removeItem('fullname')
-    window.location.replace("logout.html");
-  }
-</script>
-  
-<script type="text/javascript">
-$(function() {
-  $('.gallery-slideshow').slideshow({
-
-
-    interval: 5000
-
-  });
-});
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-
-
-
 </body>
 
 </html>
