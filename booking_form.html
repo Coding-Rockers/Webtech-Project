@@ -98,13 +98,14 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">Pick-up</span>
-											<input id="pickup_date" class="form-control" type="date" disabled>
+											<input id="pickup_date" class="form-control date_picker" type="date" disabled>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<span class="form-label">Return</span>
-											<input id="return_date" class="form-control" type="date" disabled>
+											<p id="final">Total Cost is :$0.00</p>
+											<input id="return_date" class="form-control date_picker" type="date" disabled>
 										</div>
 									</div>
 								</div>
@@ -170,6 +171,7 @@
 			$('#bookingref').prop('disabled', true);
 			document.getElementById("fullname").value = booked_car_data["fullName"];
 			document.getElementById("carName").value = booked_car_data["carName"];
+			document.getElementById("final").value = booked_car_data["finalCost"];
 			document.getElementById("pickup_date").value = new Date(booked_car_data["pickupDate"]).toISOString().slice(0, 10);
 			document.getElementById("return_date").value = new Date(booked_car_data["dropoffDate"]).toISOString().slice(0, 10);
 			// document.getElementById("booking").style.backgroundImage = "url(booked_car_data['carImage'])";
@@ -192,16 +194,91 @@
 		document.getElementById("modifyBookingbtn").style.display = "none";
 		document.getElementById("saveBookingbtn").style.display = "inline";
 	}
+	$('.date_picker').on('change',function(){
+			debugger;
+			car_data=JSON.parse(sessionStorage.getItem("current_booking_cardata"));
+			pickup=$('#pickup_date').val();
+			dropoff=$('#return_date').val();
+			if(pickup!=undefined && pickup!=null && pickup!="" && dropoff!=undefined && dropoff!=null && dropoff!=""){
+			
+				pickup_date=new Date(pickup);
+				dropoff_date=new Date(dropoff);
+				if(pickup_date<dropoff_date){
+					//str1=pickup_date.split('-');
+					// str2=dropoff_date.split('-');
+					// t1=new Date(str1[2],str1[1],str1[0]);
+					// t2=new Date(str2[2],str2[1],str2[0]);
+					// pickup_date=new Date($('#pickup_date').val());
+					// dropoff_date=new Date($('#dropoff_date').val());
+					t1=pickup_date.getTime();
+					t2=dropoff_date.getTime();
+					var diff1=Math.abs(t2-t1);
+					var millisecondsInADay = (1000 * 3600 * 24);
+					var diffindays=diff1/millisecondsInADay;
+					var week_quot=0;
+					var week_rem=0;
+					
+					var week=7;
+					
+					
+					if(diffindays<7){
+						
+						rate=car_data["dailyrate"];
+					}
+					else if(diffindays<30){
+						debugger;
+						
+						diff=Math.floor(diffindays/week);
+						rem=diffindays % week;
+						rate =(car_data["weeklyrate"]*diff)+(rem*car_data["dailyrate"]);
+					}
+					else{
+						debugger;
+						
+						diff=Math.floor(diffindays/30);
+						rem_month=diffindays%30;
+						if(rem_month>7){
+							week_quot=Math.floor(rem_month/7);
+							week_rem=rem_month%week;
+
+						}
+						else{
+							week_rem=rem_month%week;
+
+						}
+						
+
+						
+						rate=(car_data["monthlyrate"]*diff)+(car_data["weeklyrate"]*week_quot)+(week_rem*car_data["dailyrate"]);
+						debugger;
+					}
+				}
+
+					cost=(rate).toFixed(2);
+					final="Total Cost : $"+cost;
+					debugger;
+					document.getElementById('final').innerHTML=final;
+			}
+		});
 
 	function saveBooking() {
+		debugger;
 		$('#booking_msg').html('');
 		var pickupDate = new Date($('#pickup_date').val());
 		var dropoffDate = new Date($('#return_date').val());
 		var bookingref = $('#bookingref').val();
 		var carName = $('#carName').val();
 		var fullName = $('#fullname').val();
+		var final=booked_car_data["finalCost"];
+		 /////
+		 
 
-		var booked_car_data = {bookingref:bookingref, fullName:fullName, carName:carName, pickupDate:pickupDate, dropoffDate:dropoffDate};
+
+
+
+
+		//////
+		var booked_car_data = {bookingref:bookingref, fullName:fullName, carName:carName, pickupDate:pickupDate, dropoffDate:dropoffDate,finalCost:final};
 		sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
 
 		document.getElementById("booking_msg").style.color = "green";
@@ -218,4 +295,6 @@
 
 </body>
 
+
 </html>
+	
