@@ -12,6 +12,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+	
 
 	<link type="text/css" rel ="stylesheet" href = "css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
@@ -60,6 +61,10 @@
 	<div id="booking" class="section">
 		<div class="section-center">
 			<div class="container">
+				<div class="row terms">
+					<span class="term">Pick-up and drop-off timings are 10AM, more than one hour delay on drop-off may cause 1 day extra charge.  </span>
+
+				</div>
 				<div class="row">
 					<div class="booking-form">
 						<form>
@@ -77,6 +82,7 @@
 									<div class="form-group">
 										<span class="form-label">Full Name</span>
 										<input class="form-control" type="text" placeholder="Full name" id="fullname" required>
+										<span class="text-red"></span>
 									</div>
 								</div>
 							</div>
@@ -85,125 +91,47 @@
 									<div class="form-group">
 										<span class="form-label">Pick-up</span>
 										<input class="form-control date_picker" type="date" id="pickup_date"  required>
+										<span class="text-red"></span>
 									</div>
 								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">Hour</span>
-										<select class="form-control" id="pickup_hour">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-											<option>7</option>
-											<option>8</option>
-											<option>9</option>
-											<option>10</option>
-											<option>11</option>
-											<option>12</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">Minute</span>
-										<select class="form-control" id="pickup_minute">
-											<option>00</option>
-											<option>05</option>
-											<option>10</option>
-											<option>15</option>
-											<option>20</option>
-											<option>25</option>
-											<option>30</option>
-											<option>35</option>
-											<option>40</option>
-											<option>45</option>
-											<option>50</option>
-											<option>55</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label" style="font-size:xx-small;">AM/PM</span>
-										<select class="form-control" id="pickup_time">
-											<option>AM</option>
-											<option>PM</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-							</div>
-                            <div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										<span class="form-label">Drop-off</span>
 										<input class="form-control date_picker" type="date" id="dropoff_date"  required>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">Hour</span>
-										<select class="form-control" id="dropoff_hour">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-											<option>7</option>
-											<option>8</option>
-											<option>9</option>
-											<option>10</option>
-											<option>11</option>
-											<option>12</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">Minute</span>
-										<select class="form-control" id="dropoff_minute">
-											<option>00</option>
-											<option>05</option>
-											<option>10</option>
-											<option>15</option>
-											<option>20</option>
-											<option>25</option>
-											<option>30</option>
-											<option>35</option>
-											<option>40</option>
-											<option>45</option>
-											<option>50</option>
-											<option>55</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label" style="font-size:xx-small;">AM/PM</span>
-										<select class="form-control" id="dropoff_time">
-											<option>AM</option>
-											<option>PM</option>
-										</select>
-										<span class="select-arrow"></span>
+										<span class="text-red"></span>
 									</div>
 								</div>
 							</div>
+                            
                             <div id="dif">
 
                             </div>
 							<div class="row">
 								<div class="col-md-3">
 									<div class="form-group">
-										<span class="form-label"id="total_cost" style="text-transform: none;font-size: large;" ></span>
+										<span class="form-label"id="total_cost" style="text-transform: none;font-size: large;" >Total Cost : $0.00</span>
 										<!-- <input class="form-control date_picker" type="text" id="total_cost" readonly required> -->
+									</div>
+								</div>
+							</div>
+							<!-- <div class="form-group" x-data="{ fileName: '' }">
+								<div class="input-group shadow">
+								  <span class="input-group-text px-3 text-muted"><i class="fa fa-image fa-lg"></i></span>
+								  <input type="file" x-ref="file" @change="fileName = $refs.file.files[0].name" name="img[]" class="d-none">
+								  <input type="text" class="form-control form-control-lg" placeholder="Upload Image" x-model="fileName">
+								  <button class="browse btn btn-primary px-4" type="button" x-on:click.prevent="$refs.file.click()"><i class="fas fa-image"></i> Upload</button>
+								</div>
+							  </div> -->
+							<div class="row">
+								<div class="col-md-3 ">
+									<div class="form-group">
+										<span class="form-label">Upload Driving License</span>
+										<label class="file upload">
+											<span><i class="fa fa-image"></i></span>
+											<input type="file" id="file" aria-label="File browser example" required>
+											<span class="file-custom"></span>
+											<span class="text-red"></span>
+										</label>
 									</div>
 								</div>
 							</div>
@@ -220,7 +148,7 @@
 								</div>
 								<div class="col-md-3">
 									<div class="form-btn">
-										<button class="submit-btn">Cancel Booking</button>
+										<button class="submit-btn cancel">Cancel Booking</button>
 									</div>
 									
 								</div>
@@ -248,29 +176,64 @@
         //     document.getElementById('diff').innerHTML=cost;
             
         // });
+		$('.cancel').on('click',function(){
+			window.location.replace("index.html");
+		});
 
 		
 		$('.book').on('click',function(){
 			debugger;
+			
+			var rand=Math.floor((Math.random()*10000000)+1000000);
+			var bookingref = Math.random().toString(36).substring(7);
 			var fullName=$('#fullname').val();
 			var carName=car_data["carname"];
+			var carImage=car_data["carImage"];
 			var finalCost=cost;
-			var pickupDate=pickup_date;
-			var dropoffDate=dropoff_date;
-			var pickupHour=$('#pickup_hour').val();
-			var pickupMinute=$('#pickup_minute').val();
-			var pickupTime=$('#pickup_time').val();
-			var dropoffHour=$('#dropoff_hour').val();
-			var dropoffMinute=$('#dropoff_minute').val();
-			var dropoffTime=$('#dropoff_time').val();
-			var booked_car_data = {fullName:fullName,carName:carName,finalCost:finalCost,pickupDate:pickupDate,dropoffDate:dropoffDate,pickupHour:pickupHour,pickupMinute:pickupMinute,pickupTime:pickupTime,dropoffHour:dropoffHour,dropoffMinute:dropoffMinute,dropoffTime:dropoffTime  };
-			sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
-			window.location.replace("booking_form.html");
+			var pickupDate=$('#pickup_date').val();
+			var dropoffDate=$('#dropoff_date').val();
+			var license=document.getElementById('file').files[0];
+			var isValid = true;
+			if(fullName==undefined || fullName==null || fullName=="" ){
+				$('#fullname').next().text("Please enter full name!");
+				isValid=false;
+
+			}
+			if(pickupDate==undefined || pickupDate==null || pickupDate=="" ){
+				$('#pickup_date').next().text("Please select pickup date!");
+				isValid=false;
+
+			}
+			if(dropoffDate==undefined || dropoffDate==null || dropoffDate=="" ){
+				$('#dropoff_date').next().text("Please select drop-off date!");
+				isValid=false;
+
+			}
+			if(license==undefined || license==null || license==""){
+				debugger;
+				$('#file').next().next().text("Please upload driving license");
+				isValid=false;
+
+			}
+
+
+			if(isValid){
+				var booked_car_data = {bookingref:bookingref,fullName:fullName,carName:carName,finalCost:finalCost,pickupDate:pickupDate,dropoffDate:dropoffDate,license:license,carImage:carImage  };
+				sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
+				debugger;
+				window.location.replace("booking_form.html");
+				debugger;
+			}
+
+				
+
 
 		});
+		
 
 
         $('.date_picker').on('change',function(){
+			debugger;
 			pickup=$('#pickup_date').val();
 			dropoff=$('#dropoff_date').val();
 			if(pickup!=undefined && pickup!=null && pickup!="" && dropoff!=undefined && dropoff!=null && dropoff!=""){
@@ -289,7 +252,9 @@
 					var diff1=Math.abs(t2-t1);
 					var millisecondsInADay = (1000 * 3600 * 24);
 					var diffindays=diff1/millisecondsInADay;
-					var diff=diffindays;
+					var week_quot=0;
+					var week_rem=0;
+					
 					var week=7;
 					
 					
@@ -297,19 +262,37 @@
 						
 						rate=car_data["dailyrate"];
 					}
-					else if(diffindays<29){
+					else if(diffindays<30){
+						debugger;
 						
-						diff=diffindays/week;
-						rate =car_data["weeklyrate"];
+						diff=Math.floor(diffindays/week);
+						rem=diffindays % week;
+						rate =(car_data["weeklyrate"]*diff)+(rem*car_data["dailyrate"]);
 					}
 					else{
+						debugger;
 						
-						diff=diffindays/30;
-						rate=car_data["monthlyrate"];
+						diff=Math.floor(diffindays/30);
+						rem_month=diffindays%30;
+						if(rem_month>7){
+							week_quot=Math.floor(rem_month/7);
+							week_rem=rem_month%week;
+
+						}
+						else{
+							week_rem=rem_month%week;
+
+						}
+						
+
+						
+						rate=(car_data["monthlyrate"]*diff)+(car_data["weeklyrate"]*week_quot)+(week_rem*car_data["dailyrate"]);
+						debugger;
 					}
 
-					cost=(rate*diff).toFixed(2);
+					cost=(rate).toFixed(2);
 					final="Total Cost : $"+cost;
+					debugger;
 					document.getElementById('total_cost').innerHTML=final;
 					
 					//var diff=Math.abs(new Date($('#dropoff_date').val()).getTime()-new Date($('#pickup_date').val()).getTime())
