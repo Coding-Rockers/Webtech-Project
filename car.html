@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/styleVehicle.css">
-    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
+    <link rel ="stylesheet" href = "css/styles.css">
+    <link rel ="stylesheet" href ="css/styleVehicle.css">
+    <link href = "https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> 
 
-
-</head>
 
 <body>
 
@@ -376,7 +378,77 @@
             window.location.replace("logout.html");
         }
 
-    </script>
+
+        $('.booking').on('click',function(){
+            var carname = $(this).parent().siblings().children('.name').text();
+            var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
+            var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
+            var weeklylyrate = rate[1].slice(1,rate[1].indexOf('/'))
+            var monthlyrate = rate[2].slice(1,rate[2].indexOf('/'))
+            var car_data = {carname:carname,dailyrate:dailyrate,weeklylyrate:weeklylyrate ,monthlyrate:monthlyrate }
+            sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
+        })
+    });
+
+    
+    function Logout(){
+    sessionStorage.removeItem('email')
+    sessionStorage.removeItem('fullname')
+    window.location.replace("logout.html");
+  }
+
+</script>   
+
+<footer class="footer-distributed">
+
+    <div class="footer-left">
+        <img src="images/logo1.jpg">
+      <h3>About<span>DriveSmart</span></h3>
+  
+      <p class="footer-links">
+        <a href="#">Home</a>
+        |
+        <a href="#">Blog</a>
+        |
+        <a href="#">About</a>
+        |
+        <a href="#">Contact</a>
+      </p>
+  
+      <p class="footer-company-name">© 2021 Drive Smart </p>
+    </div>
+  
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+          <p><span>123 Dundas StBrantford
+             </span>
+             Toronto,ON N3R 1S6,Canada</p>
+      </div>
+  
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1 123-256-7890</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@drivesmart.com">support@drivesmart.com</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the company</span>
+        We offer renting service.</p>
+      <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
