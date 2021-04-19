@@ -181,8 +181,8 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-		integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
-		crossorigin="anonymous"></script>
+		integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
+		</script>
 	<script>
 		$(document).ready(function () {
 			car_data = JSON.parse(sessionStorage.getItem("current_booking_cardata"));
@@ -190,13 +190,6 @@
 
 			var cost, final, rate;
 			document.getElementById('car_name').innerHTML = x;
-			debugger;
-
-
-			// $('.btn').on('click',function(){
-			//     document.getElementById('diff').innerHTML=cost;
-
-			// });
 			$('.cancel').on('click', function () {
 				window.location.replace("index.html");
 			});
@@ -220,7 +213,7 @@
 					isValid = false;
 
 				}
-				else{
+				else {
 					$('#fullname').next().text("");
 				}
 				if (pickupDate == undefined || pickupDate == null || pickupDate == "") {
@@ -228,7 +221,7 @@
 					isValid = false;
 
 				}
-				else{
+				else {
 					$('#pickup_date').next().text("");
 				}
 				if (dropoffDate == undefined || dropoffDate == null || dropoffDate == "") {
@@ -236,31 +229,33 @@
 					isValid = false;
 
 				}
-				else{
+				else {
 					$('#dropoff_date').next().text("");
 				}
 				if (license == undefined || license == null || license == "") {
-					debugger;
+					
 					$('#file').next().next().text("Please upload driving license");
 					isValid = false;
 
 				}
-				else{
+				else {
 					$('#file').next().next().text("");
 				}
 
+				if ($('input[type=checkbox]:checked').length == 0) {
+					$('#agree').next().text('Agree to the terms and conditions.');
+					isValid = false;
+				}
 
+				else {
+					$('#checkbox_error').text('');
+				}
 				if (isValid) {
 					var booked_car_data = { bookingref: bookingref, fullName: fullName, carName: carName, finalCost: finalCost, pickupDate: pickupDate, dropoffDate: dropoffDate, license: license, carImage: carImage };
 					sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
-
 					window.location.replace("booking_form.html");
 
 				}
-
-
-
-
 			});
 
 
@@ -273,12 +268,7 @@
 					pickup_date = new Date(pickup);
 					dropoff_date = new Date(dropoff);
 					if (pickup_date < dropoff_date) {
-						//str1=pickup_date.split('-');
-						// str2=dropoff_date.split('-');
-						// t1=new Date(str1[2],str1[1],str1[0]);
-						// t2=new Date(str2[2],str2[1],str2[0]);
-						// pickup_date=new Date($('#pickup_date').val());
-						// dropoff_date=new Date($('#dropoff_date').val());
+
 						t1 = pickup_date.getTime();
 						t2 = dropoff_date.getTime();
 						var diff1 = Math.abs(t2 - t1);
@@ -286,76 +276,47 @@
 						var diffindays = diff1 / millisecondsInADay;
 						var week_quot = 0;
 						var week_rem = 0;
+						var rem;
 
 						var week = 7;
 
 
 						if (diffindays < 7) {
+							
 
 							rate = car_data["dailyrate"] * diffindays;
 						}
 						else if (diffindays < 30) {
+							
 
 							diff = Math.floor(diffindays / week);
 							rem = diffindays % week;
 							rate = (car_data["weeklyrate"] * diff) + (rem * car_data["dailyrate"]);
+							
 						}
 						else {
-
 							diff = Math.floor(diffindays / 30);
 							rem_month = diffindays % 30;
 							if (rem_month > 7) {
 								week_quot = Math.floor(rem_month / 7);
 								week_rem = rem_month % week;
-								rate = car_data["dailyrate"];
-							}
-							else if (diffindays < 30) {
-								debugger;
 
-								diff = Math.floor(diffindays / week);
-								rem = diffindays % week;
-								rate = (car_data["weeklyrate"] * diff) + (rem * car_data["dailyrate"]);
 							}
+
+
 							else {
-								debugger;
-
-								diff = Math.floor(diffindays / 30);
-								rem_month = diffindays % 30;
-								if (rem_month > 7) {
-									week_quot = Math.floor(rem_month / 7);
-									week_rem = rem_month % week;
-
-								}
-								else {
-									week_rem = rem_month % week;
-
-								}
-
-
-
-								rate = (car_data["monthlyrate"] * diff) + (car_data["weeklyrate"] * week_quot) + (week_rem * car_data["dailyrate"]);
-								debugger;
+								
+								week_rem = rem_month % week;
 							}
-
 
 							rate = (car_data["monthlyrate"] * diff) + (car_data["weeklyrate"] * week_quot) + (week_rem * car_data["dailyrate"]);
+							
+
 						}
-
 						cost = (rate).toFixed(2);
 						final = "Total Cost : $" + cost;
 						document.getElementById('total_cost').innerHTML = final;
-
-						//var diff=Math.abs(new Date($('#dropoff_date').val()).getTime()-new Date($('#pickup_date').val()).getTime())
-						//document.getElementById('diff').innerHTML=cost;
-						cost = (rate).toFixed(2);
-						final = "Total Cost : $" + cost;
-						debugger;
-						document.getElementById('total_cost').innerHTML = final;
-
-						//var diff=Math.abs(new Date($('#dropoff_date').val()).getTime()-new Date($('#pickup_date').val()).getTime())
-						//document.getElementById('diff').innerHTML=cost;
-						// diff=dropoff_date-pickup_date;
-
+						
 					}
 					else {
 						alert("Please select a valid drop-off date!!");
