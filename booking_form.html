@@ -195,7 +195,6 @@
 		document.getElementById("saveBookingbtn").style.display = "inline";
 	}
 	$('.date_picker').on('change',function(){
-			debugger;
 			car_data=JSON.parse(sessionStorage.getItem("current_booking_cardata"));
 			pickup=$('#pickup_date').val();
 			dropoff=$('#return_date').val();
@@ -226,14 +225,12 @@
 						rate=car_data["dailyrate"];
 					}
 					else if(diffindays<30){
-						debugger;
 						
 						diff=Math.floor(diffindays/week);
 						rem=diffindays % week;
 						rate =(car_data["weeklyrate"]*diff)+(rem*car_data["dailyrate"]);
 					}
 					else{
-						debugger;
 						
 						diff=Math.floor(diffindays/30);
 						rem_month=diffindays%30;
@@ -250,19 +247,16 @@
 
 						
 						rate=(car_data["monthlyrate"]*diff)+(car_data["weeklyrate"]*week_quot)+(week_rem*car_data["dailyrate"]);
-						debugger;
 					}
 				}
 
 					cost=(rate).toFixed(2);
 					final="Total Cost : $"+cost;
-					debugger;
 					document.getElementById('final').innerHTML=final;
 			}
 		});
 
 	function saveBooking() {
-		debugger;
 		$('#booking_msg').html('');
 		var pickupDate = new Date($('#pickup_date').val());
 		var dropoffDate = new Date($('#return_date').val());

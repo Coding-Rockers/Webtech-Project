@@ -138,6 +138,21 @@
 										</label>
 									</div>
 								</div>
+								<div class="col-md-3">
+
+								</div>
+								<div class="col-md-6">
+									<div class="form-group conditions">
+										<form action="#"
+											onsubmit="if(document.getElementById('agree').checked) { return true; } else { alert('Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy'); return false; }">
+
+											<input type="checkbox" name="checkbox" value="check" id="agree" /> I have
+											read and agree to the Terms and Conditions and Privacy Policy
+											<span class="text-red"></span>
+
+										</form>
+									</div>
+								</div>
 							</div>
 
 							<div class="row">
@@ -152,7 +167,7 @@
 								</div>
 								<div class="col-md-3">
 									<div class="form-btn">
-										<button class="submit-btn cancel">Cancel Booking</button>
+										<button class="submit submit-btn cancel">Cancel Booking</button>
 									</div>
 
 								</div>
@@ -188,7 +203,7 @@
 
 
 			$('.book').on('click', function () {
-				debugger;
+
 
 				var rand = Math.floor((Math.random() * 10000000) + 1000000);
 				var bookingref = Math.random().toString(36).substring(7);
@@ -205,15 +220,24 @@
 					isValid = false;
 
 				}
+				else{
+					$('#fullname').next().text("");
+				}
 				if (pickupDate == undefined || pickupDate == null || pickupDate == "") {
 					$('#pickup_date').next().text("Please select pickup date!");
 					isValid = false;
 
 				}
+				else{
+					$('#pickup_date').next().text("");
+				}
 				if (dropoffDate == undefined || dropoffDate == null || dropoffDate == "") {
 					$('#dropoff_date').next().text("Please select drop-off date!");
 					isValid = false;
 
+				}
+				else{
+					$('#dropoff_date').next().text("");
 				}
 				if (license == undefined || license == null || license == "") {
 					debugger;
@@ -221,14 +245,17 @@
 					isValid = false;
 
 				}
+				else{
+					$('#file').next().next().text("");
+				}
 
 
 				if (isValid) {
 					var booked_car_data = { bookingref: bookingref, fullName: fullName, carName: carName, finalCost: finalCost, pickupDate: pickupDate, dropoffDate: dropoffDate, license: license, carImage: carImage };
 					sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
-					debugger;
+
 					window.location.replace("booking_form.html");
-					debugger;
+
 				}
 
 
@@ -239,7 +266,6 @@
 
 
 			$('.date_picker').on('change', function () {
-				debugger;
 				pickup = $('#pickup_date').val();
 				dropoff = $('#dropoff_date').val();
 				if (pickup != undefined && pickup != null && pickup != "" && dropoff != undefined && dropoff != null && dropoff != "") {
@@ -266,36 +292,61 @@
 
 						if (diffindays < 7) {
 
-							rate = car_data["dailyrate"];
+							rate = car_data["dailyrate"] * diffindays;
 						}
 						else if (diffindays < 30) {
-							debugger;
 
 							diff = Math.floor(diffindays / week);
 							rem = diffindays % week;
 							rate = (car_data["weeklyrate"] * diff) + (rem * car_data["dailyrate"]);
 						}
 						else {
-							debugger;
 
 							diff = Math.floor(diffindays / 30);
 							rem_month = diffindays % 30;
 							if (rem_month > 7) {
 								week_quot = Math.floor(rem_month / 7);
 								week_rem = rem_month % week;
+								rate = car_data["dailyrate"];
+							}
+							else if (diffindays < 30) {
+								debugger;
 
+								diff = Math.floor(diffindays / week);
+								rem = diffindays % week;
+								rate = (car_data["weeklyrate"] * diff) + (rem * car_data["dailyrate"]);
 							}
 							else {
-								week_rem = rem_month % week;
+								debugger;
 
+								diff = Math.floor(diffindays / 30);
+								rem_month = diffindays % 30;
+								if (rem_month > 7) {
+									week_quot = Math.floor(rem_month / 7);
+									week_rem = rem_month % week;
+
+								}
+								else {
+									week_rem = rem_month % week;
+
+								}
+
+
+
+								rate = (car_data["monthlyrate"] * diff) + (car_data["weeklyrate"] * week_quot) + (week_rem * car_data["dailyrate"]);
+								debugger;
 							}
-
 
 
 							rate = (car_data["monthlyrate"] * diff) + (car_data["weeklyrate"] * week_quot) + (week_rem * car_data["dailyrate"]);
-							debugger;
 						}
 
+						cost = (rate).toFixed(2);
+						final = "Total Cost : $" + cost;
+						document.getElementById('total_cost').innerHTML = final;
+
+						//var diff=Math.abs(new Date($('#dropoff_date').val()).getTime()-new Date($('#pickup_date').val()).getTime())
+						//document.getElementById('diff').innerHTML=cost;
 						cost = (rate).toFixed(2);
 						final = "Total Cost : $" + cost;
 						debugger;
