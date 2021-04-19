@@ -202,7 +202,7 @@
 				isValid=false;
 
 			}
-			if(pickupDate==undefined || pickupDate==null || pickupDate=="" ){
+			if(dropoffDate==undefined || dropoffDate==null || dropoffDate=="" ){
 				$('#dropoff_date').next().text("Please select drop-off date!");
 				isValid=false;
 
@@ -249,7 +249,9 @@
 					var diff1=Math.abs(t2-t1);
 					var millisecondsInADay = (1000 * 3600 * 24);
 					var diffindays=diff1/millisecondsInADay;
-					var diff=diffindays;
+					var week_quot=0;
+					var week_rem=0;
+					
 					var week=7;
 					
 					
@@ -260,16 +262,32 @@
 					else if(diffindays<30){
 						debugger;
 						
-						diff=diffindays/week;
-						rate =car_data["weeklyrate"];
+						diff=Math.floor(diffindays/week);
+						rem=diffindays % week;
+						rate =(car_data["weeklyrate"]*diff)+(rem*car_data["dailyrate"]);
 					}
 					else{
+						debugger;
 						
-						diff=diffindays/30;
-						rate=car_data["monthlyrate"];
+						diff=Math.floor(diffindays/30);
+						rem_month=diffindays%30;
+						if(rem_month>7){
+							week_quot=Math.floor(rem_month/7);
+							week_rem=rem_month%week;
+
+						}
+						else{
+							week_rem=rem_month%week;
+
+						}
+						
+
+						
+						rate=(car_data["monthlyrate"]*diff)+(car_data["weeklyrate"]*week_quot)+(week_rem*car_data["dailyrate"]);
+						debugger;
 					}
 
-					cost=(rate*diff).toFixed(2);
+					cost=(rate).toFixed(2);
 					final="Total Cost : $"+cost;
 					debugger;
 					document.getElementById('total_cost').innerHTML=final;
