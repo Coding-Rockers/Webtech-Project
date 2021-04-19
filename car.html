@@ -350,46 +350,23 @@
 
     $(document).ready(function(){
 
-            var fullname = sessionStorage.getItem('fullname');
-
-            if (fullname != undefined && fullname != "" && fullname != null) {
-                $('#welcome_msg').html('Welcome ' + fullname);
-                $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
-            }
-
-<<<<<<< HEAD
-            
         
-=======
-            $('.booking').on('click', function () {
-                var carname = $(this).parent().siblings().children('.name').text();
-                var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
-                var dailyrate = rate[0].slice(1, rate[0].indexOf('/'));
-                var weeklyrate = rate[1].slice(1, rate[1].indexOf('/'));
-                var monthlyrate = rate[2].slice(1, rate[2].indexOf('/'));
-                var carImage = $(this).parent().siblings('div.img').find('img').attr('src');
-                var car_data = { carname: carname, dailyrate: dailyrate, weeklyrate: weeklyrate, monthlyrate: monthlyrate, carImage:carImage }
-                sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
-            })
-        });
-        $(document).ready(function(){
-        debugger;
->>>>>>> 186622d4bdd18f3b1da746da7935690bfaa4d3e8
 
         var fullname = sessionStorage.getItem('fullname');
 
         if(fullname != undefined && fullname != "" && fullname != null){
             $('#welcome_msg').html('Welcome ' + fullname);
-            $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+            $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>');
         }
 
         $('.booking').on('click',function(){
             var carname = $(this).parent().siblings().children('.name').text();
             var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
             var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
-            var weeklylyrate = rate[1].slice(1,rate[1].indexOf('/'))
-            var monthlyrate = rate[2].slice(1,rate[2].indexOf('/'))
-            var car_data = {carname:carname,dailyrate:dailyrate,weeklylyrate:weeklylyrate ,monthlyrate:monthlyrate }
+            var weeklyrate = rate[1].slice(1,rate[1].indexOf('/'));
+            var carImage = $(this).parent().siblings('div.img').find('img').attr('src');
+            var monthlyrate = rate[2].slice(1,rate[2].indexOf('/'));
+            var car_data = {carname:carname,dailyrate:dailyrate,weeklyrate:weeklyrate ,monthlyrate:monthlyrate, carImage:carImage }
             sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
         });
     });
