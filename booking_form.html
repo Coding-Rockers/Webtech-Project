@@ -67,16 +67,17 @@
 
 	<div id="booking" class="section">
 		<div class="section-center">
-			<div class="container">
+			<button id="toggle" class="btn btn-primary">Toggle View Form</button>
+			<div id="content" class="container">
 				<div class="row">
 					<span class="text-red" id="booking_msg"></span>
 					<div id="bookingForm" class="booking-form" style="display: none;">
 						<form>
-							<div class="row">
-								<div class="col-md-12">
+							<div class="row" >
+								<div id="ref" class="col-md-12" style="display: none;">
 									<div class="form-group">
 										<span class="form-label">Booking Reference</span>
-										<input id="bookingref" class="form-control" type="text" placeholder="Booking reference">
+										<input id="bookingref" class="form-control" type="text" placeholder="Booking reference" >
 									</div>
 							</div>
 							<div id="bookingDetails">
@@ -95,17 +96,30 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Pick-up</span>
 											<input id="pickup_date" class="form-control date_picker" type="date" disabled>
 										</div>
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<div class="form-group">
 											<span class="form-label">Return</span>
-											<p id="final">Total Cost is :$0.00</p>
+											<!-- <p id="final">Total Cost is :$</p> -->
 											<input id="return_date" class="form-control date_picker" type="date" disabled>
+										</div>
+									</div>
+									<div id="costdiv" class="col-md-4">
+										<div class="form-group">
+											<span class="form-label">Cost</span>
+											<input id="cost" class="form-control" type="text" disabled>
+										</div>
+									</div>
+<!--  -->
+									<div id=finaldiv class="col-md-4" style="display: none;">
+										<div class="form-group">
+											<span class="form-label">Cost</span>
+											<input id="final" class="form-control" type="text" disabled>
 										</div>
 									</div>
 								</div>
@@ -154,14 +168,22 @@
 	});
 </script>
 
+<script>
+$(document).ready(function(){
+	$("#toggle").click(function(){
+	$("#content").toggle(1000);
+	});
+});
+</script>
+
 <!-- <script>
     var booking_data = [{"12345qwerty":{booking_reference: "12345qwerty", fullname: "Mike Brown", pickup_date: new Date("2021-05-25").toISOString().slice(0, 10), hour: "2", minute: "00", am_pm: "PM", return_date: new Date("2021-05-31").toISOString().slice(0, 10)}},
 						{"54321asdfgh":{booking_reference: "54321asdfgh", fullname: "Jane Richard", pickup_date: new Date("2021-04-17").toISOString().slice(0, 10), hour: "10", minute: "30", am_pm: "AM", return_date: new Date("2021-04-20").toISOString().slice(0, 10)}}
 	];
 </script> -->
 
-
 <script>
+	
 	function viewBooking() {
 		$('#booking_msg').html('');
 		booked_car_data=JSON.parse(sessionStorage.getItem("booked_cardata"));
@@ -172,13 +194,16 @@
 			document.getElementById("fullname").value = booked_car_data["fullName"];
 			document.getElementById("carName").value = booked_car_data["carName"];
 			document.getElementById("final").value = booked_car_data["finalCost"];
+			document.getElementById("cost").value = booked_car_data["finalCost"];
 			document.getElementById("pickup_date").value = new Date(booked_car_data["pickupDate"]).toISOString().slice(0, 10);
 			document.getElementById("return_date").value = new Date(booked_car_data["dropoffDate"]).toISOString().slice(0, 10);
-			// document.getElementById("booking").style.backgroundImage = "url(booked_car_data['carImage'])";
-			document.getElementById("booking").style.backgroundImage = "url(images/car-kia.jpg)";
+			debugger;
+			document.getElementById("booking").style.backgroundImage = "url("+booked_car_data['carImage']+")";
+			// document.getElementById("booking").style.backgroundImage = "url(images/car-kia.jpg)";
 			console.log(booked_car_data["carImage"]);
 
 			document.getElementById("viewBookingbtn").style.display = "none";
+			document.getElementById("ref").style.display = "inline";
 			document.getElementById("modifyBookingbtn").style.display = "inline";
 			document.getElementById("cancelBookingbtn").style.display = "inline";
 		}
@@ -255,13 +280,16 @@
 				}
 
 					cost=(rate).toFixed(2);
-					final="Total Cost : $"+cost;
+					final= cost;
 					debugger;
-					document.getElementById('final').innerHTML=final;
+					document.getElementById("costdiv").style.display = "none";
+					document.getElementById("finaldiv").style.display = "inline";
+					document.getElementById('final').value=final;
 			}
 		});
 
 	function saveBooking() {
+		booked_car_data=JSON.parse(sessionStorage.getItem("booked_cardata"));
 		debugger;
 		$('#booking_msg').html('');
 		var pickupDate = new Date($('#pickup_date').val());
@@ -269,16 +297,10 @@
 		var bookingref = $('#bookingref').val();
 		var carName = $('#carName').val();
 		var fullName = $('#fullname').val();
-		var final=booked_car_data["finalCost"];
-		 /////
-		 
-
-
-
-
-
-		//////
-		var booked_car_data = {bookingref:bookingref, fullName:fullName, carName:carName, pickupDate:pickupDate, dropoffDate:dropoffDate,finalCost:final};
+		var final = $('#final').val();
+		var carImage = booked_car_data['carImage']
+debugger;
+		var booked_car_data = {bookingref:bookingref, fullName:fullName, carName:carName, pickupDate:pickupDate, dropoffDate:dropoffDate,finalCost:final, carImage:carImage};
 		sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
 
 		document.getElementById("booking_msg").style.color = "green";
