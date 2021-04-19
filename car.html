@@ -24,9 +24,6 @@
                 <img src="images/logo1.jpg" alt=" DriveSmart" width="120" height="90">
             </a>
         </div>
-        <label for="btn" class="icon">
-            <span class="fa fa-bars"></span>
-        </label>
         <div class="right">
             <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
             <br>
@@ -371,6 +368,8 @@
                 sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
             })
         });
+        $(document).ready(function(){
+        debugger;
 
         var fullname = sessionStorage.getItem('fullname');
 
