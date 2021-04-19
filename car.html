@@ -19,13 +19,12 @@
             <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
                 <img src="images/logo1.jpg" alt="A1 Telecom" width="120" height="90">
                 </a>
-            <!-- <img src="images/Drive Smart Logo.png"> -->
        </div>
         <label for ="btn" class ="icon">
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-        <h4 class="welcome">Welcome John</h4>
+        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
         <br>
         <ul>
            <li>
@@ -43,9 +42,9 @@
         <a href = "booking_form.html">Manage Booking</a>
 
     </li>
-    <li><a href ="#">About Us</a></li>
-    <li><a href ="#">Contact Us</a></li>
-    <li><a href ="#">SIGN IN / JOIN</a></li>
+    <li><a href ="Aboutus.html">About Us</a></li>
+      <li><a href ="Contactus.html">Contact Us</a></li>
+      <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
     </ul>
   </div>
     </nav>
@@ -283,6 +282,7 @@
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <script src="scripts/booking.js"></script>
 <script>
     const openModalButtons = document.querySelectorAll('[data-modal-target]')
     const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -322,9 +322,18 @@
         overlay.classList.remove('active')
     }
 
+
     $(document).ready(function(){
+        debugger;
+
+        var fullname = sessionStorage.getItem('fullname');
+
+        if(fullname != undefined && fullname != "" && fullname != null){
+            $('#welcome_msg').html('Welcome ' + fullname);
+            $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+        }
+
         $('.booking').on('click',function(){
-            debugger;
             var carname = $(this).parent().siblings().children('.name').text();
             var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
             var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
@@ -334,6 +343,13 @@
             sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
         })
     });
+
+    
+    function Logout(){
+    sessionStorage.removeItem('email')
+    sessionStorage.removeItem('fullname')
+    window.location.replace("logout.html");
+  }
 
 </script>   
 </body>
