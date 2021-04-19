@@ -1,234 +1,256 @@
 <!DOCTYPE html>
-<html lang="en" dir ="ltr">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Van</title>
-    <link rel ="stylesheet" href = "css/styles.css">
-    <link rel ="stylesheet" href ="css/styleVehicle.css">
-</head><!DOCTYPE html>
-<html lang="en" dir ="ltr">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styleVehicle.css">
+</head>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
-    <link rel ="stylesheet" href ="styleVehicle.css">
-    <link href = "https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
- 
+    <link rel="stylesheet" href="styleVehicle.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-</head> 
+
+</head>
+
 <body>
 
     <nav>
-        <div class ="logo"> 
+        <div class="logo">
             <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
-                <img src="images/logo1.jpg" alt="A1 Telecom" width="120" height="90">
-                </a>
+                <img src="images/logo1.jpg" alt="DriveSmart" width="120" height="90">
+            </a>
             <!-- <img src="images/Drive Smart Logo.png"> -->
-       </div>
-        <label for ="btn" class ="icon">
-            <span class ="fa fa-bars"></span>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
         </label>
-        <div class="right"> 
-        <h4 class="welcome">Welcome John</h4>
-        <br>
-        <ul >
-           <li>
-                <a href ="#">Book a Vehicle</a>
+        <div class="right">
+            <h4 class="welcome">Welcome John</h4>
+            <br>
             <ul>
-                <li><a class="nav-link" href ="car.html">Car</a></li>
-              
-                <li><a class="nav-link" href ="suv.html">SUV</a></li>
-                <li><a class="nav-link" href ="van.html">Van</a></li>
-              
-        </ul>
-      
-    </li>
-    <li>
-        <a href = "booking_form.html">Manage Booking</a>
+                <li>
+                    <a href="#">Book a Vehicle</a>
+                    <ul>
+                        <li><a class="nav-link" href="car.html">Car</a></li>
 
-    </li>
-    <li><a href ="#">About Us</a></li>
-    <li><a href ="#">Contact Us</a></li>
-    <li><a href ="#">SIGN IN / JOIN</a></li>
-    </ul>
-  </div>
+                        <li><a class="nav-link" href="suv.html">SUV</a></li>
+                        <li><a class="nav-link" href="van.html">Van</a></li>
+
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="booking_form.html">Manage Booking</a>
+
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">SIGN IN / JOIN</a></li>
+            </ul>
+        </div>
     </nav>
 
-    
+
     <section id="mainG">
         <div class="flex-containerG"></div>
-        <div id ="img-divG">
-            <img src = "images/cleaning1.png" id = "imageG" alt ="">
+        <div id="img-divG">
+            <img src="images/cleaning1.png" id="imageG" alt="">
         </div>
         <div class="textG">
-            <h2 id = "titleG">Enhancing Customer's Safety </h2>
+            <h2 id="titleG">Enhancing Customer's Safety </h2>
             <lu>
                 <br>
                 <li>As health and safety measures, all our rental vehicles are cleaned <br>
-                and sanitized before your pick-up.</li><br>
+                    and sanitized before your pick-up.</li><br>
                 <li>Each vehicle is provided with disinfectant wipes and 2 pieces of disposable masks.</li>
             </lu>
-            <button data-modal-target = "#modal" class = "open-button">Read the Terms and Conditions</button>
-        </div> 
+            <button data-modal-target="#modal" class="open-button">Read the Terms and Conditions</button>
+        </div>
     </section>
 
 
- 
-  <div class="modal" id="modal">
-        <div class = "modal-header">
-            <div class = "title">Terms and Conditions</div>
-            <button data-close-button class = "close-button">&times;</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Terms and Conditions</div>
+            <button data-close-button class="close-button">&times;</button>
         </div>
-          <div class = "modal-body">
-          <lu>
-              <li>A valid driver's license is required at the time of booking.</li>
-              <li>We only accept major credit card for online payment.</li>
-              <li>Rate excludes Taxes and surcharges.</li>
-              <li>Rate does not include: Fuel, GPS, and carseat</li>
-              <li>Travel is limited within Canada only.</li>
-              <li>A new booking is required if you have to extend your rental.</li>
-          </lu>
+        <div class="modal-body">
+            <lu>
+                <li>A valid driver's license is required at the time of booking.</li>
+                <li>We only accept major credit card for online payment.</li>
+                <li>Rate excludes Taxes and surcharges.</li>
+                <li>Rate does not include: Fuel, GPS, and carseat</li>
+                <li>Travel is limited within Canada only.</li>
+                <li>A new booking is required if you have to extend your rental.</li>
+            </lu>
         </div>
-  </div>
-  <div id ="overlay"></div>
+    </div>
+    <div id="overlay"></div>
 
-    <div class = "container">
-    <div class ="container2">
+    <div class="container">
+        <div class="container2">
 
 
-        <div class = "card">
-            <div class ="img">
-                <img src = "images/van-hondaOdyssy.jpg">
+            <div class="card">
+                <div class="img">
+                    <img src="images/van-hondaOdyssy.jpg">
                 </div>
-                <div class = "top-text">
-                    <div class = "name">Honda Odyssy</div>
+                <div class="top-text">
+                    <div class="name">Honda Odyssy</div>
                     <p>2020</p>
                 </div>
-                <div class = "bottom-text">
-                    <div class = "text">
-                        <div><span class="icon ion-md-pricetags"> : </span><span>$80/day, $400/week, $1400/month</span></div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$80/day, $400/week, $1400/month</span>
+                        </div>
                         <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
                         <div><span class="icon ion-md-people"> : </span> <span>8</span></div> <br>
-                        Fleet-footed, efficient, and polished, the Odyssey's powertrain is a sweetheart that requires zero compromises. The Odyssey changes direction crisply, and from behind the wheel it's easy to forget you're piloting a three-row van. 
-                             </div>
-                        <div class = "btn booking">
-                            <a href ="#">Book</a>
-                        </div>
+                        Fleet-footed, efficient, and polished, the Odyssey's powertrain is a sweetheart that requires
+                        zero compromises. The Odyssey changes direction crisply, and from behind the wheel it's easy to
+                        forget you're piloting a three-row van.
                     </div>
-                </div>                       
-                
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
 
 
-                <div class = "card">
-                    <div class ="img">
-                        <img src = "images/van -ford2020.jpg">
+
+            <div class="card">
+                <div class="card-ribbon">
+                    <span>most popular</span>
+                </div>
+                <div class="img">
+                    <img src="images/van -ford2020.jpg">
+                </div>
+                <div class="top-text">
+                    <div class="name">Ford Transit</div>
+                    <p>2020</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$78/day, $400/week, $1400/month</span>
                         </div>
-                        <div class = "top-text">
-                            <div class = "name">Ford Transit</div>
-                            <p>2020</p>
-                        </div>
-                        <div class = "bottom-text">
-                            <div class = "text">
-                                <div><span class="icon ion-md-pricetags"> : </span><span>$80/day, $400/week, $1400/month</span></div>
-                                <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                <div><span class="icon ion-md-people"> : </span> <span>8</span></div> <br>
-                                The van gets a new and improved powertrain lineup, and it also adds standard driver-assistance features such as forward-collision warning and automated emergency braking. The 2020 Transit also benefits from interior updates such as new grab handles and vents.
-                                     </div>
-                                <div class = "btn booking">
-                                    <a href ="#">Book</a>
-                                </div>
-                            </div>
-                        </div>    
-                        
-                        
-                        <div class = "card">
-                            <div class ="img">
-                                <img src = "images/van-chevrolet2021.png">
-                                </div>
-                                <div class = "top-text">
-                                    <div class = "name">Chevy Express Van</div>
-                                    <p>2020</p>
-                                </div>
-                                <div class = "bottom-text">
-                                    <div class = "text">
-                                        <div><span class="icon ion-md-pricetags"> : </span><span>$95/day, $450/week, $1600/month</span></div>
-                                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                        <div><span class="icon ion-md-people"> : </span> <span>12</span></div> <br>
-                                        Whatever your business needs may be, Express vans are ready to work. Express Cargo offers a variety of equipment packages that give you plenty of room for all your gear.
-                                             </div>
-                                        <div class = "btn booking">
-                                            <a href ="#">Book</a>
-                                        </div>
-                                    </div>
-                                </div>              
-        
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>8</span></div> <br>
+                        The van gets a new and improved powertrain lineup, and it also adds standard driver-assistance
+                        features such as forward-collision warning and automated emergency braking. The 2020 Transit
+                        also benefits from interior updates such as new grab handles and vents.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
 
-                        <div class = "card">
-                            <div class ="img">
-                                <img src = "images/van-gmc2020.jpg">
-                                </div>
-                                <div class = "top-text">
-                                    <div class = "name">GMC Savana</div>
-                                    <p>2020</p>
-                                </div>
-                                <div class = "bottom-text">
-                                    <div class = "text">
-                                        <div><span class="icon ion-md-pricetags"> : </span><span>$95/day, $450/week, $1600/month</span></div>
-                                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                        <div><span class="icon ion-md-people"> : </span> <span>12</span></div> <br>
-                                        The 2020 GMC Savana Cargo is a full-size cargo van with two seats up front and all cargo space in the back. It's available in two load ratings: 2500 and 3500. Each can be ordered in a standard-wheelbase configuration or an extended-wheelbase configuration that provides more cargo space. 
-                                             </div>
-                                        <div class = "btn booking">
-                                            <a href ="#">Book</a>
-                                        </div>
-                                    </div>
-                                </div>              
-  
-      </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/van-chevrolet2021.png">
+                </div>
+                <div class="top-text">
+                    <div class="name">Chevy Express Van</div>
+                    <p>2020</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$95/day, $450/week, $1600/month</span>
+                        </div>
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>12</span></div> <br>
+                        Whatever your business needs may be, Express vans are ready to work. Express Cargo offers a
+                        variety of equipment packages that give you plenty of room for all your gear.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/van-gmc2020.jpg">
+                </div>
+                <div class="top-text">
+                    <div class="name">GMC Savana</div>
+                    <p>2020</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$95/day, $450/week, $1600/month</span>
+                        </div>
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>12</span></div> <br>
+                        The 2020 GMC Savana Cargo is a full-size cargo van with two seats up front and all cargo space
+                        in the back. It's available in two load ratings: 2500 and 3500. Each can be ordered in a
+                        standard-wheelbase configuration or an extended-wheelbase configuration that provides more cargo
+                        space.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
     <script src="scripts/booking.js"></script>
+    
     <script>
         const openModalButtons = document.querySelectorAll('[data-modal-target]')
         const closeModalButtons = document.querySelectorAll('[data-close-button]')
         const overlay = document.getElementById('overlay')
-    
-        openModalButtons.forEach(button =>{
-            button.addEventListener('click',() =>{
+
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
                 const modal = document.querySelector(button.dataset.modalTarget)
                 openModal(modal)
             })
         })
-    
-        overlay.addEventListener('click', () =>{
+
+        overlay.addEventListener('click', () => {
             const modals = document.querySelectorAll('.modal.active')
-            modals.forEach(modal =>{
+            modals.forEach(modal => {
                 closeModal(modal)
             })
         })
-    
-        closeModalButtons.forEach(button =>{
-            button.addEventListener('click',() =>{
+
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
                 const modal = button.closest('.modal')
                 closeModal(modal)
             })
         })
-    
-        function openModal(modal){
+
+        function openModal(modal) {
             if (modal == null) return
             modal.classList.add('active')
             overlay.classList.add('active')
-    
+
         }
-    
-        function closeModal(modal){
+
+        function closeModal(modal) {
             if (modal == null) return
             modal.classList.remove('active')
             overlay.classList.remove('active')
         }
-    
-    </script>      
+
+    </script>
 </body>
+
 </html>

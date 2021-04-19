@@ -1,357 +1,382 @@
 <!DOCTYPE html>
-<html lang="en" dir ="ltr">
+<html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars</title>
-    <link rel ="stylesheet" href = "css/styles.css">
-    <link rel ="stylesheet" href ="css/styleVehicle.css">
-    <link href = "https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-    
- 
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styleVehicle.css">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
-</head> 
+
+
+</head>
+
 <body>
 
     <nav>
-        <div class ="logo"> 
+        <div class="logo">
             <a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
-                <img src="images/logo1.jpg" alt="A1 Telecom" width="120" height="90">
-                </a>
-       </div>
-        <label for ="btn" class ="icon">
-            <span class ="fa fa-bars"></span>
+                <img src="images/logo1.jpg" alt=" DriveSmart" width="120" height="90">
+            </a>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
         </label>
-        <div class="right"> 
-        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
-        <br>
-        <ul>
-           <li>
-                <a href ="#">Book a Vehicle</a>
+        <div class="right">
+            <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
+            <br>
             <ul>
-                <li><a class="nav-link" href ="car.html">Car</a></li>
-              
-                <li><a class="nav-link" href ="suv.html">SUV</a></li>
-                <li><a class="nav-link" href ="van.html">Van</a></li>
-              
-        </ul>
-      
-    </li>
-    <li>
-        <a href = "booking_form.html">Manage Booking</a>
+                <li>
+                    <a href="#">Book a Vehicle</a>
+                    <ul>
+                        <li><a class="nav-link" href="car.html">Car</a></li>
 
-    </li>
-    <li><a href ="Aboutus.html">About Us</a></li>
-      <li><a href ="Contactus.html">Contact Us</a></li>
-      <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
-    </ul>
-  </div>
+                        <li><a class="nav-link" href="suv.html">SUV</a></li>
+                        <li><a class="nav-link" href="van.html">Van</a></li>
+
+                    </ul>
+
+                </li>
+                <li>
+                    <a href="booking_form.html">Manage Booking</a>
+
+                </li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="Contactus.html">Contact Us</a></li>
+                <li><a href="SignIn.html">SIGN IN / JOIN</a></li>
+            </ul>
+        </div>
     </nav>
 
     <section id="mainG">
         <div class="flex-containerG"></div>
-        <div id ="img-divG">
-            <img src = "images/cleaning1.png" id = "imageG" alt ="">
+        <div id="img-divG">
+            <img src="images/cleaning1.png" id="imageG" alt="">
         </div>
         <div class="textG">
-            <h2 id = "titleG">Enhancing Customer's Safety </h2>
+            <h2 id="titleG">Enhancing Customer's Safety </h2>
             <lu>
                 <br>
                 <li>As health and safety measures, all our rental vehicles are cleaned <br>
-                and sanitized before your pick-up.</li><br>
+                    and sanitized before your pick-up.</li><br>
                 <li>Each vehicle is provided with disinfectant wipes and 2 pieces of disposable masks.</li>
             </lu>
-            <button data-modal-target = "#modal" class = "open-button">Read the Terms and Conditions</button>
-        </div> 
+            <button data-modal-target="#modal" class="open-button">Read the Terms and Conditions</button>
+        </div>
     </section>
 
 
-  
-  <div class="modal" id="modal">
-        <div class = "modal-header">
-            <div class = "title">Terms and Conditions</div>
-            <button data-close-button class = "close-button">&times;</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Terms and Conditions</div>
+            <button data-close-button class="close-button">&times;</button>
         </div>
-          <div class = "modal-body">
-          <lu>
-              <li>A valid driver's license is required at the time of booking.</li>
-              <li>We only accept major credit card for online payment.</li>
-              <li>Rate excludes Taxes and surcharges.</li>
-              <li>Rate does not include: Fuel, GPS, and carseat</li>
-              <li>Travel is limited within Canada only.</li>
-              <li>A new booking is required if you have to extend your rental.</li>
-          </lu>
+        <div class="modal-body">
+            <lu>
+                <li>A valid driver's license is required at the time of booking.</li>
+                <li>We only accept major credit card for online payment.</li>
+                <li>Rate excludes Taxes and surcharges.</li>
+                <li>Rate does not include: Fuel, GPS, and carseat</li>
+                <li>Travel is limited within Canada only.</li>
+                <li>A new booking is required if you have to extend your rental.</li>
+            </lu>
         </div>
-  </div>
-  <div id ="overlay"></div>
+    </div>
+    <div id="overlay"></div>
 
-    <div class = "container">
-    <div class ="container2">
+    <div class="container">
+        <div class="container2">
 
 
-        <div class = "card">
-            <div class ="img">
-                <img src = "images/car-chevrolet.jpg">
+            <div class="card">
+                <div class="img">
+                    <img src="images/car-chevrolet.jpg">
                 </div>
-                <div class = "top-text">
-                    <div class = "name">Chevrolet Cruze</div>
+                <div class="top-text">
+                    <div class="name">Chevrolet Cruze</div>
                     <p>2019</p>
                 </div>
-                <div class = "bottom-text">
-                    <div class = "text">
-                        <div><span class="icon ion-md-pricetags"> : </span><span>$50/day, $320/week, $1000/month</span></div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$50/day, $320/week, $1000/month</span>
+                        </div>
                         <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
                         <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                        153-horsepower four-cylinder engine, remote keyless entry, Teen Driver, a rearview camera, and the Chevrolet MyLink infotainment system with two USB ports, Bluetooth, a four-speaker stereo, Apple CarPlay, Android Auto, and a Wi-Fi hot spot.
-                             </div>
-                        <div class = "btn booking">
-                            <a href ="#">Book</a>
-                        </div>
+                        153-horsepower four-cylinder engine, remote keyless entry, Teen Driver, a rearview camera, and
+                        the Chevrolet MyLink infotainment system with two USB ports, Bluetooth, a four-speaker stereo,
+                        Apple CarPlay, Android Auto, and a Wi-Fi hot spot.
                     </div>
-                </div>                       
-                
-
-
-                <div class = "card">
-                    <div class ="img">
-                        <img src = "images/hyundai.jpg">
-                        </div>
-                        <div class = "top-text">
-                            <div class = "name">Hyundai Accent</div>
-                            <p>2020</p>
-                        </div>
-                        <div class = "bottom-text">
-                            <div class = "text">
-                                <div><span class="icon ion-md-pricetags"> : </span><span>$50/day, $320/week, $1000/month</span></div>
-                                <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                                5 DOORS in Beautiful SILKY BLUE! Options include: Regular Unleaded I-4 1.6 L/97 CVT. Standard features include: Back-Up Camera, Tire Specific Low Tire Pressure Warning.
-                                     </div>
-                                <div class = "btn booking">
-                                    <a href ="#">Book</a>
-                                </div>
-                            </div>
-                        </div>    
-                        
-                        
-                        <div class = "card">
-                            <div class ="img">
-                                <img src = "images/mercedez.png">
-                                </div>
-                                <div class = "top-text">
-                                    <div class = "name">Mercedes Benz C63</div>
-                                    <p>2020</p>
-                                </div>
-                                <div class = "bottom-text">
-                                    <div class = "text">
-                                        <div><span class="icon ion-md-pricetags"> : </span><span>$65/day, $380/week, $1300/month</span></div>
-                                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                                        Hand-built, twin-turbo 4.0-liter V-8 engine. In the C63, it makes 469 horsepower and 479 lb-ft of torque. The C63 S ups the performance ante with 503 horsepower and 516 lb-ft. Both engines use a nine-speed automatic with rear-wheel drive.
-                                             </div>
-                                        <div class = "btn booking">
-                                            <a href ="#">Book</a>
-                                        </div>
-                                    </div>
-                                </div>              
-        
-
-                        <div class = "card">
-                            <div class ="img">
-                                <img src = "images/car-kia.jpg">
-                                </div>
-                                <div class = "top-text">
-                                    <div class = "name">Kia Rio</div>
-                                    <p>2020</p>
-                                </div>
-                                <div class = "bottom-text">
-                                    <div class = "text">
-                                        <div><span class="icon ion-md-pricetags"> : </span><span>$50/day, $320/week, $1000/month</span></div>
-                                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                                        Whether you’re running around town at low speeds or hitting the open road, the fuel-sipping IVT equipped Rio 5-door will get you up to 100 kilometres on as little as 6.6 litres of fuel, and that should keep you smiling.
-                                             </div>
-                                        <div class = "btn booking">
-                                            <a href ="#">Book</a>
-                                        </div>
-                                    </div>
-                                </div>              
-  
-      </div>
-
-<div class ="container2">
-        
-
-        <div class = "card">
-            <div class ="img">
-                <img src = "images/car-nissan.jpg">
-                </div>
-                <div class = "top-text">
-                    <div class = "name">Nissan Altima</div>
-                    <p>2019</p>
-                </div>
-                <div class = "bottom-text">
-                    <div class = "text">
-                        <div><span class="icon ion-md-pricetags"> : </span><span>$58/day, $335/week, $1100/month</span></div>
-                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                        The 2019 Nissan Altima interior has ample passenger space and extensive contemporary features. The lengthy list of driver-assist technologies includes standard automated emergency braking, optional lane-keeping assist, and more.
-                             </div>
-                        <div class = "btn booking">
-                            <a href ="#">Book</a>
-                        </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
                     </div>
-                </div>                  
-                
-                <div class = "card">
-                    <div class ="img">
-                        <img src = "images/car-ford.jpg">
-                        </div>
-                        <div class = "top-text">
-                            <div class = "name">Ford Fusion</div>
-                            <p>2020</p>
-                        </div>
-                        <div class = "bottom-text">
-                            <div class = "text">
-                                <div><span class="icon ion-md-pricetags"> : </span><span>$55/day, $330/week, $1020/month</span></div>
-                                <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
-                                <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                                It comes with a turbocharged 1.5-liter four-cylinder engine. Other notable features include the Sync 3 infotainment system, Ford's Co-Pilot360 driver-safety package, and heated front seats.
-                                     </div>
-                                <div class = "btn booking">
-                                    <a href ="#">Book</a>
-                                </div>
-                            </div>
-                        </div>              
-
-
-
-        <div class = "card">
-            <div class ="img">
-                <img src = "images/car-bmw.jpg">
                 </div>
-                <div class = "top-text">
-                    <div class = "name">BMW 6 Series</div>
-                    <p>2019</p>
+            </div>
+
+
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/hyundai.jpg">
                 </div>
-                <div class = "bottom-text">
-                    <div class = "text">
-                        <div><span class="icon ion-md-pricetags"> : </span><span>$65/day, $380/week, $1300/month</span></div>
+                <div class="top-text">
+                    <div class="name">Hyundai Accent</div>
+                    <p>2020</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$50/day, $320/week, $1000/month</span>
+                        </div>
                         <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
                         <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                        Engine: 4.4L 32V V8 w/TwinPower Turbo -inc: Combines 2 turbochargers w/variable valve control (Double-VANOS and Valvetronic) and high-precision direct injection
-                        Transmission: 8-Speed Sport Automatic -inc: automatic sport and manual shift modes 
-                             </div>
-                        <div class = "btn booking">
-                            <a href ="#">Book</a>
-                        </div>
+                        5 DOORS in Beautiful SILKY BLUE! Options include: Regular Unleaded I-4 1.6 L/97 CVT. Standard
+                        features include: Back-Up Camera, Tire Specific Low Tire Pressure Warning.
                     </div>
-                </div>              
-            
-        
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
 
-        <div class = "card">
-            <div class ="img">
-                <img src = "images/car-honda.jpg">
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/mercedez.png">
                 </div>
-                <div class = "top-text">
-                    <div class = "name">Honda Civic</div>
-                    <p>2019</p>
+                <div class="top-text">
+                    <div class="name">Mercedes Benz C63</div>
+                    <p>2020</p>
                 </div>
-                <div class = "bottom-text">
-                    <div class = "text">
-                        <div><span class="icon ion-md-pricetags"> : </span><span>$55/day, $325/week, $1000/month</span></div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$65/day, $380/week, $1300/month</span>
+                        </div>
                         <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
                         <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
-                        With Wheelbase (in.): 106.3. Width, Max w/o mirrors (in.): 70.9, Length, Overall (in.): 182.7 , Height, Overall (in.): 55.7. Some interior features include: Alarm
-                        Back-Up Camera, Cruise Control, Adaptive Cruise Control, Vehicle Anti-Theft System, Auto-Off Headlights
+                        Hand-built, twin-turbo 4.0-liter V-8 engine. In the C63, it makes 469 horsepower and 479 lb-ft
+                        of torque. The C63 S ups the performance ante with 503 horsepower and 516 lb-ft. Both engines
+                        use a nine-speed automatic with rear-wheel drive.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
 
-                             </div>
-                        <div class = "btn booking">
-                            <a href ="#">Book</a>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/car-kia.jpg">
+                </div>
+
+                <div class="top-text">
+                    <div class="name">Kia Rio</div>
+                    <p>2020</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$45/day, $320/week, $1000/month</span>
                         </div>
-                    </div>  
-                </div>              
-  
-      </div>
-
-      
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
+                        Whether you’re running around town at low speeds or hitting the open road, the fuel-sipping IVT
+                        equipped Rio 5-door will get you up to 100 kilometres on as little as 6.6 litres of fuel, and
+                        that should keep you smiling.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
+
+        <div class="container2">
+
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/car-nissan.jpg">
+                </div>
+                <div class="top-text">
+                    <div class="name">Nissan Altima</div>
+                    <p>2019</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$58/day, $335/week, $1100/month</span>
+                        </div>
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
+                        The 2019 Nissan Altima interior has ample passenger space and extensive contemporary features.
+                        The lengthy list of driver-assist technologies includes standard automated emergency braking,
+                        optional lane-keeping assist, and more.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/car-ford.jpg">
+                </div>
+                <div class="top-text">
+                    <div class="name">Ford Fusion</div>
+                    <p>2020</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$55/day, $330/week, $1020/month</span>
+                        </div>
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
+                        It comes with a turbocharged 1.5-liter four-cylinder engine. Other notable features include the
+                        Sync 3 infotainment system, Ford's Co-Pilot360 driver-safety package, and heated front seats.
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/car-bmw.jpg">
+                </div>
+                <div class="top-text">
+                    <div class="name">BMW 6 Series</div>
+                    <p>2019</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$65/day, $380/week, $1300/month</span>
+                        </div>
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
+                        Engine: 4.4L 32V V8 w/TwinPower Turbo -inc: Combines 2 turbochargers w/variable valve control
+                        (Double-VANOS and Valvetronic) and high-precision direct injection
+                        Transmission: 8-Speed Sport Automatic -inc: automatic sport and manual shift modes
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="img">
+                    <img src="images/car-honda.jpg">
+                </div>
+                <div class="top-text">
+                    <div class="name">Honda Civic</div>
+                    <p>2019</p>
+                </div>
+                <div class="bottom-text">
+                    <div class="text">
+                        <div><span class="icon ion-md-pricetags"> : </span><span>$55/day, $325/week, $1000/month</span>
+                        </div>
+                        <div><span class="icon ion-md-car"> : </span> <span>Automatic</span></div>
+                        <div><span class="icon ion-md-people"> : </span> <span>5</span></div> <br>
+                        With Wheelbase (in.): 106.3. Width, Max w/o mirrors (in.): 70.9, Length, Overall (in.): 182.7 ,
+                        Height, Overall (in.): 55.7. Some interior features include: Alarm
+                        Back-Up Camera, Cruise Control, Adaptive Cruise Control, Vehicle Anti-Theft System, Auto-Off
+                        Headlights
+
+                    </div>
+                    <div class="btn booking">
+                        <a href="#">Book</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous"></script>
     <script src="scripts/booking.js"></script>
-<script>
-    const openModalButtons = document.querySelectorAll('[data-modal-target]')
-    const closeModalButtons = document.querySelectorAll('[data-close-button]')
-    const overlay = document.getElementById('overlay')
+    <script>
+        const openModalButtons = document.querySelectorAll('[data-modal-target]')
+        const closeModalButtons = document.querySelectorAll('[data-close-button]')
+        const overlay = document.getElementById('overlay')
 
-    openModalButtons.forEach(button =>{
-        button.addEventListener('click',() =>{
-            const modal = document.querySelector(button.dataset.modalTarget)
-            openModal(modal)
+        openModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = document.querySelector(button.dataset.modalTarget)
+                openModal(modal)
+            })
         })
-    })
 
-    overlay.addEventListener('click', () =>{
-        const modals = document.querySelectorAll('.modal.active')
-        modals.forEach(modal =>{
-            closeModal(modal)
+        overlay.addEventListener('click', () => {
+            const modals = document.querySelectorAll('.modal.active')
+            modals.forEach(modal => {
+                closeModal(modal)
+            })
         })
-    })
 
-    closeModalButtons.forEach(button =>{
-        button.addEventListener('click',() =>{
-            const modal = button.closest('.modal')
-            closeModal(modal)
+        closeModalButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal')
+                closeModal(modal)
+            })
         })
-    })
 
-    function openModal(modal){
-        if (modal == null) return
-        modal.classList.add('active')
-        overlay.classList.add('active')
+        function openModal(modal) {
+            if (modal == null) return
+            modal.classList.add('active')
+            overlay.classList.add('active')
 
-    }
+        }
 
-    function closeModal(modal){
-        if (modal == null) return
-        modal.classList.remove('active')
-        overlay.classList.remove('active')
-    }
+        function closeModal(modal) {
+            if (modal == null) return
+            modal.classList.remove('active')
+            overlay.classList.remove('active')
+        }
 
 
     $(document).ready(function(){
-        debugger;
 
-        var fullname = sessionStorage.getItem('fullname');
+            var fullname = sessionStorage.getItem('fullname');
 
-        if(fullname != undefined && fullname != "" && fullname != null){
-            $('#welcome_msg').html('Welcome ' + fullname);
-            $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+            if (fullname != undefined && fullname != "" && fullname != null) {
+                $('#welcome_msg').html('Welcome ' + fullname);
+                $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+            }
+
+            $('.booking').on('click', function () {
+                var carname = $(this).parent().siblings().children('.name').text();
+                var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
+                var dailyrate = rate[0].slice(1, rate[0].indexOf('/'));
+                var weeklylyrate = rate[1].slice(1, rate[1].indexOf('/'))
+                var monthlyrate = rate[2].slice(1, rate[2].indexOf('/'))
+                var car_data = { carname: carname, dailyrate: dailyrate, weeklylyrate: weeklylyrate, monthlyrate: monthlyrate }
+                sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
+            })
+        });
+
+
+        function Logout() {
+            sessionStorage.removeItem('email')
+            sessionStorage.removeItem('fullname')
+            window.location.replace("logout.html");
         }
 
-        $('.booking').on('click',function(){
-            var carname = $(this).parent().siblings().children('.name').text();
-            var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
-            var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
-            var weeklylyrate = rate[1].slice(1,rate[1].indexOf('/'))
-            var monthlyrate = rate[2].slice(1,rate[2].indexOf('/'))
-            var car_data = {carname:carname,dailyrate:dailyrate,weeklylyrate:weeklylyrate ,monthlyrate:monthlyrate }
-            sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
-        })
-    });
-
-    
-    function Logout(){
-    sessionStorage.removeItem('email')
-    sessionStorage.removeItem('fullname')
-    window.location.replace("logout.html");
-  }
-
-</script>   
+    </script>
 </body>
-</html>
 
+</html>
