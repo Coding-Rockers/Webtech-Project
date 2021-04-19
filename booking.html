@@ -251,9 +251,10 @@
 
 		
 		$('.book').on('click',function(){
-			debugger;
+			var bookingref = Math.random().toString(36).substring(7);
 			var fullName=$('#fullname').val();
 			var carName=car_data["carname"];
+			var carImage=car_data["carImage"];
 			var finalCost=cost;
 			var pickupDate=pickup_date;
 			var dropoffDate=dropoff_date;
@@ -263,7 +264,7 @@
 			var dropoffHour=$('#dropoff_hour').val();
 			var dropoffMinute=$('#dropoff_minute').val();
 			var dropoffTime=$('#dropoff_time').val();
-			var booked_car_data = {fullName:fullName,carName:carName,finalCost:finalCost,pickupDate:pickupDate,dropoffDate:dropoffDate,pickupHour:pickupHour,pickupMinute:pickupMinute,pickupTime:pickupTime,dropoffHour:dropoffHour,dropoffMinute:dropoffMinute,dropoffTime:dropoffTime  };
+			var booked_car_data = {bookingref:bookingref,fullName:fullName,carName:carName,finalCost:finalCost,pickupDate:pickupDate,dropoffDate:dropoffDate,pickupHour:pickupHour,pickupMinute:pickupMinute,pickupTime:pickupTime,dropoffHour:dropoffHour,dropoffMinute:dropoffMinute,dropoffTime:dropoffTime,carImage:carImage };
 			sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
 			window.location.replace("booking_form.html");
 
