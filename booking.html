@@ -185,8 +185,10 @@
 			debugger;
 			
 			var rand=Math.floor((Math.random()*10000000)+1000000);
+			var bookingref = Math.random().toString(36).substring(7);
 			var fullName=$('#fullname').val();
 			var carName=car_data["carname"];
+			var carImage=car_data["carImage"];
 			var finalCost=cost;
 			var pickupDate=$('#pickup_date').val();
 			var dropoffDate=$('#dropoff_date').val();
@@ -216,7 +218,7 @@
 
 
 			if(isValid){
-				var booked_car_data = {bookingId:rand,fullName:fullName,carName:carName,finalCost:finalCost,pickupDate:pickupDate,dropoffDate:dropoffDate,license:license  };
+				var booked_car_data = {bookingref:bookingref,fullName:fullName,carName:carName,finalCost:finalCost,pickupDate:pickupDate,dropoffDate:dropoffDate,license:license,carImage:carImage  };
 				sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
 				debugger;
 				window.location.replace("booking_form.html");
@@ -224,6 +226,7 @@
 			}
 
 				
+
 
 		});
 		
