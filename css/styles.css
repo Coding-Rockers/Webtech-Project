@@ -42,7 +42,7 @@ nav ul {
   position: relative;
 }
 nav ul li {
-  float: left;
+  float: left; 
   display: inline-block;
   background: #0c3c64;
   margin: 0 5px;
