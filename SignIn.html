@@ -130,7 +130,9 @@
             $("#password").css('border-color', 'black');
             $("#email_msg").html('');
             $("#password_msg").html('');
-            $('#login_error_msg').html('')
+            $('#login_error_msg').html('');
+
+            var emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
 
             email = $("#email").val();
             password = $("#password").val();
@@ -140,6 +142,11 @@
                 $("#email").css('border-color', 'red');
                 $("#email_msg").html('Please enter email!!');
                 isValid = false
+            }
+            else if (!emailPattern.test(email)) {
+                $("#email").css('border-color', 'red');
+                $("#email_msg").html('Must be a valid email address!!');
+                isValid = false;
             }
 
             if (password == "" || password == undefined) {

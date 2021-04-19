@@ -38,23 +38,27 @@
 			<span class="fa fa-bars"></span>
 		</label>
 		<div class="right">
-			<h4 class="welcome">Welcome John</h4>
+			<h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
 			<br>
-			<ul style="z-index: 1000;">
+			<ul>
 				<li>
-					<a href="#">Book Vehicle</a>
+					<a href="#">Book a Vehicle</a>
 					<ul>
-						<li><a href="#">Car</a></li>
-						<li><a href="#">SUV</a></li>
-						<li><a href="#">Van</a></li>
+						<li><a class="nav-link" href="car.html">Car</a></li>
+
+						<li><a class="nav-link" href="suv.html">SUV</a></li>
+						<li><a class="nav-link" href="van.html">Van</a></li>
+
 					</ul>
+
 				</li>
 				<li>
-					<a href="/booking_form.html">Bookings</a>
+					<a href="booking_form.html">Manage Booking</a>
+
 				</li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">SIGN IN / JOIN</a></li>
+				<li><a href="Aboutus.html">About Us</a></li>
+				<li><a href="Contactus.html">Contact Us</a></li>
+				<li><a href="SignIn.html">SIGN IN / JOIN</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -168,6 +172,20 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
 		crossorigin="anonymous"></script>
+	<script>
+		var fullname = sessionStorage.getItem('fullname');
+
+		if (fullname != undefined && fullname != "" && fullname != null) {
+			$('#welcome_msg').html('Welcome ' + fullname);
+			$('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+		}
+
+		function Logout() {
+			sessionStorage.removeItem('email')
+			sessionStorage.removeItem('fullname')
+			window.location.replace("logout.html");
+		}
+	</script>
 	<script>
 		$(document).ready(function () {
 			car_data = JSON.parse(sessionStorage.getItem("current_booking_cardata"));

@@ -161,7 +161,9 @@
             email = $("#email").val();
             password = $("#password").val();
             confirm_password = $("#confirm_password").val();
-            var isValid = true
+            var isValid = true;
+
+            var emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
 
             if (firstname == "" || firstname == undefined) {
                 $("#firstname").css('border-color', 'red');
@@ -179,6 +181,11 @@
                 $("#email").css('border-color', 'red');
                 $("#email_msg").html('Please enter email!!');
                 isValid = false
+            }
+            else if (!emailPattern.test(email)) {
+                $("#email").css('border-color', 'red');
+                $("#email_msg").html('Must be a valid email address!!');
+                isValid = false;
             }
 
             if (password == "" || password == undefined) {
