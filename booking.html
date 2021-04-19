@@ -25,36 +25,39 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
+		<link rel="stylesheet" href="css/footer.css">
+		<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> 
+
 </head>
 
 <body>
 	<nav>
+
 		<div class="logo">
 			<a class="navbar-brand mr-4 nav-item nav-link" href="index.html">
 				<img src="images/logo1.jpg" alt=" DriveSmart" width="120" height="90">
 			</a>
 		</div>
-		<label for="btn" class="icon">
-			<span class="fa fa-bars"></span>
-		</label>
+		
 		<div class="right">
-			<h4 class="welcome">Welcome John</h4>
+			<h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
 			<br>
 			<ul style="z-index: 1000;">
 				<li>
-					<a href="#">Book Vehicle</a>
+					<a href="#">Book a Vehicle</a>
 					<ul>
-						<li><a href="#">Car</a></li>
-						<li><a href="#">SUV</a></li>
-						<li><a href="#">Van</a></li>
+						<li><a class="nav-link" href="car.html">Car</a></li>
+						<li><a class="nav-link" href="suv.html">SUV</a></li>
+						<li><a class="nav-link" href="van.html">Van</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="/booking_form.html">Bookings</a>
+					<a href="/booking_form.html">Manage Bookings</a>
 				</li>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Contact Us</a></li>
-				<li><a href="#">SIGN IN / JOIN</a></li>
+				<li><a href="Aboutus.html">About Us</a></li>
+                <li><a href="Contactus.html">Contact Us</a></li>
+                <li><a href="SignIn.html">SIGN IN / JOIN</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -180,6 +183,7 @@
 		</div>
 	</div>
 
+    <script src="scripts/booking.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous">
 		</script>
@@ -328,7 +332,93 @@
 			});
 
 		});
+
+
+
+
+		$(document).ready(function(){
+        debugger;
+
+        var fullname = sessionStorage.getItem('fullname');
+
+        if(fullname != undefined && fullname != "" && fullname != null){
+            $('#welcome_msg').html('Welcome ' + fullname);
+            $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+        }
+
+        $('.booking').on('click',function(){
+            var carname = $(this).parent().siblings().children('.name').text();
+            var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
+            var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
+            var weeklylyrate = rate[1].slice(1,rate[1].indexOf('/'))
+            var monthlyrate = rate[2].slice(1,rate[2].indexOf('/'))
+            var car_data = {carname:carname,dailyrate:dailyrate,weeklylyrate:weeklylyrate ,monthlyrate:monthlyrate }
+            sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
+        })
+    });
+
+    
+    function Logout(){
+    sessionStorage.removeItem('email')
+    sessionStorage.removeItem('fullname')
+    window.location.replace("logout.html");
+  }
+
+
 	</script>
+    });
+</script>
+
+<footer class="footer-distributed">
+
+	<div class="footer-left">
+		<img src="images/logo1.jpg">
+	  <h3>About<span>DriveSmart</span></h3>
+  
+	  <p class="footer-links">
+		<a href="#">Home</a>
+		|
+		<a href="#">Blog</a>
+		|
+		<a href="#">About</a>
+		|
+		<a href="#">Contact</a>
+	  </p>
+  
+	  <p class="footer-company-name">© 2021 Drive Smart </p>
+	</div>
+  
+	<div class="footer-center">
+	  <div>
+		<i class="fa fa-map-marker"></i>
+		  <p><span>123 Dundas StBrantford
+			 </span>
+			 Toronto,ON N3R 1S6,Canada</p>
+	  </div>
+  
+	  <div>
+		<i class="fa fa-phone"></i>
+		<p>+1 123-256-7890</p>
+	  </div>
+	  <div>
+		<i class="fa fa-envelope"></i>
+		<p><a href="mailto:support@drivesmart.com">support@drivesmart.com</a></p>
+	  </div>
+	</div>
+	<div class="footer-right">
+	  <p class="footer-company-about">
+		<span>About the company</span>
+		We offer renting service.</p>
+	  <div class="footer-icons">
+		<a href="#"><i class="fa fa-facebook"></i></a>
+		<a href="#"><i class="fa fa-twitter"></i></a>
+		<a href="#"><i class="fa fa-instagram"></i></a>
+		<a href="#"><i class="fa fa-linkedin"></i></a>
+		<a href="#"><i class="fa fa-youtube"></i></a>
+	  </div>
+	</div>
+  </footer>
+
 </body>
 
 </html>
