@@ -16,10 +16,10 @@
 	<link type="text/css" rel ="stylesheet" href = "css/styles.css">
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
         $(document).ready(function () {	
-			$('#bookingForm').fadeIn(3000, function () {});
+			$('#bookingForm').fadeIn(1500, function () {});
         });
     </script>
 
@@ -70,85 +70,42 @@
 			<div class="container">
 				<div class="row">
 					<span class="text-red" id="booking_msg"></span>
-					<div id="bookingForm" class="booking-form">
+					<div id="bookingForm" class="booking-form" style="display: none;">
 						<form>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<span class="form-label">Booking Reference</span>
-										<input id="booking_reference" class="form-control" type="text" placeholder="Booking reference">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-group">
-										<span class="form-label">Full Name</span>
-										<input id="fullname" class="form-control" type="text" placeholder="Full name" readonly>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="form-group">
-										<span class="form-label">Pick-up</span>
-										<input id="pickup_date" class="form-control" type="date" readonly>
-									</div>
-								</div>
-								<div class="col-md-2" >
-									<div class="form-group">
-										<span class="form-label">Hour</span>
-										<select id="hour" class="form-control">
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-											<option>7</option>
-											<option>8</option>
-											<option>9</option>
-											<option>10</option>
-											<option>11</option>
-											<option>12</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">Minute</span>
-										<select id="minute" class="form-control">
-											<option>00</option>
-											<option>05</option>
-											<option>10</option>
-											<option>15</option>
-											<option>20</option>
-											<option>25</option>
-											<option>30</option>
-											<option>35</option>
-											<option>40</option>
-											<option>45</option>
-											<option>50</option>
-											<option>55</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-								<div class="col-md-2">
-									<div class="form-group">
-										<span class="form-label">AM/PM</span>
-										<select id="am_pm" class="form-control">
-											<option>AM</option>
-											<option>PM</option>
-										</select>
-										<span class="select-arrow"></span>
-									</div>
-								</div>
-							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<span class="form-label">Return</span>
-										<input id="return_date" class="form-control" type="date" readonly>
+										<span class="form-label">Booking Reference</span>
+										<input id="bookingref" class="form-control" type="text" placeholder="Booking reference">
+									</div>
+							</div>
+							<div id="bookingDetails">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Full Name</span>
+											<input id="fullname" class="form-control" type="text" placeholder="Full Name" disabled>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Car Name</span>
+											<input id="carName" class="form-control" type="text" placeholder="Car name" disabled>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Pick-up</span>
+											<input id="pickup_date" class="form-control" type="date" disabled>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<span class="form-label">Return</span>
+											<input id="return_date" class="form-control" type="date" disabled>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -163,26 +120,17 @@
 								</div>
 
 								<div class="col-md-12">
-									<div class="col-md-2"></div>
-									<div id="modifyBookingbtn" class="col-md-8">
+									<div id="modifyBookingbtn" class="col-md-6">
 										<div class="form-btn">
-											<input type="button" class="submit-btn" onclick="modifyBooking()" value="Modify This Booking"/>
+											<input type="button" class="submit-btn" onclick="modifyBooking()" value="Change Dates"/>
 										</div>
 									</div>
-								</div>
-
-								<div class="col-md-12">
-									<div class="col-md-2"></div>
-									<div id="saveBookingbtn" class="col-md-8">
+									<div id="saveBookingbtn" class="col-md-6">
 										<div class="form-btn">
 											<input type="submit" class="submit-btn" onclick="saveBooking()" value="Save Changes"/>
 										</div>
 									</div>
-								</div>
-
-								<div class="col-md-12">
-									<div class="col-md-2"></div>
-									<div id="cancelBookingbtn" class="col-md-8">
+									<div id="cancelBookingbtn" class="col-md-6">
 										<div class="form-btn">
 											<button class="submit-btn" onclick="cancelBooking()">Cancel Booking</button>
 										</div>
@@ -195,6 +143,7 @@
 			</div>
 		</div>
 	</div>
+
 <script>
 	$(document).ready(function(){
 		var fullname = sessionStorage.getItem('fullname');
@@ -204,68 +153,65 @@
 	});
 </script>
 
-
-
-<script>
+<!-- <script>
     var booking_data = [{"12345qwerty":{booking_reference: "12345qwerty", fullname: "Mike Brown", pickup_date: new Date("2021-05-25").toISOString().slice(0, 10), hour: "2", minute: "00", am_pm: "PM", return_date: new Date("2021-05-31").toISOString().slice(0, 10)}},
 						{"54321asdfgh":{booking_reference: "54321asdfgh", fullname: "Jane Richard", pickup_date: new Date("2021-04-17").toISOString().slice(0, 10), hour: "10", minute: "30", am_pm: "AM", return_date: new Date("2021-04-20").toISOString().slice(0, 10)}}
 	];
-</script>
+</script> -->
+
 
 <script>
 	function viewBooking() {
 		$('#booking_msg').html('');
-		var booking_reference = document.getElementById("booking_reference").value;
-		var isExist = false;
-		for (i in booking_data){
-			Object.keys(booking_data[i]).forEach(k => {
-				if (k == booking_reference){
-					isExist = true;
-					document.getElementById("fullname").value = booking_data[i][k].fullname;
-					document.getElementById("pickup_date").value = booking_data[i][k].pickup_date;
-					document.getElementById("hour").value = booking_data[i][k].hour;
-					document.getElementById("minute").value = booking_data[i][k].minute;
-					document.getElementById("am_pm").value = booking_data[i][k].am_pm;
-					document.getElementById("return_date").value = booking_data[i][k].return_date;
-				}
-			});
-		}
-		if (isExist){
+		booked_car_data=JSON.parse(sessionStorage.getItem("booked_cardata"));
+		if (booked_car_data){
+			$("#bookingDetails").show(1500);
+			document.getElementById("bookingref").value = booked_car_data["bookingref"];
+			$('#bookingref').prop('disabled', true);
+			document.getElementById("fullname").value = booked_car_data["fullName"];
+			document.getElementById("carName").value = booked_car_data["carName"];
+			document.getElementById("pickup_date").value = new Date(booked_car_data["pickupDate"]).toISOString().slice(0, 10);
+			document.getElementById("return_date").value = new Date(booked_car_data["dropoffDate"]).toISOString().slice(0, 10);
+			// document.getElementById("booking").style.backgroundImage = "url(booked_car_data['carImage'])";
+			document.getElementById("booking").style.backgroundImage = "url(images/car-kia.jpg)";
+			console.log(booked_car_data["carImage"]);
+
 			document.getElementById("viewBookingbtn").style.display = "none";
 			document.getElementById("modifyBookingbtn").style.display = "inline";
 			document.getElementById("cancelBookingbtn").style.display = "inline";
 		}
 		else{
-			$('#booking_msg').html('That booking reference was not found!!')
-		}
+			$('#booking_msg').html('No Booking found!!')
+		}	
 	}
-</script>
 
-<script>
 	function modifyBooking() {
 		$('#booking_msg').html('');
-		$('#pickup_date').prop('readonly', false);
-		$('#return_date').prop('readonly', false);
-		$('#fullname').prop('readonly', false);
-		$('#booking_reference').prop('readonly', true);
+		$('#pickup_date').prop('disabled', false);
+		$('#return_date').prop('disabled', false);
 		document.getElementById("modifyBookingbtn").style.display = "none";
 		document.getElementById("saveBookingbtn").style.display = "inline";
 	}
-</script>
 
-<script>
 	function saveBooking() {
 		$('#booking_msg').html('');
+		var pickupDate = new Date($('#pickup_date').val());
+		var dropoffDate = new Date($('#return_date').val());
+		var bookingref = $('#bookingref').val();
+		var carName = $('#carName').val();
+		var fullName = $('#fullname').val();
+
+		var booked_car_data = {bookingref:bookingref, fullName:fullName, carName:carName, pickupDate:pickupDate, dropoffDate:dropoffDate};
+		sessionStorage.setItem('booked_cardata', JSON.stringify(booked_car_data));
+
 		document.getElementById("booking_msg").style.color = "green";
 		$('#booking_msg').html('Booking Modified!')
 	}
-</script>
 
-<script>
 	function cancelBooking() {
 		$('#booking_msg').html('');
 		sessionStorage.clear();
-		document.getElementById("booking_msg").style.color = "green";
+		document.getElementById("booking_msg").style.color = "red";
 		$('#booking_msg').html('Booking Cancelled!')
 	}
 </script>
