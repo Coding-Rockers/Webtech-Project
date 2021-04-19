@@ -293,6 +293,7 @@ nav ul ul ul li {
 .tiles article > .image img {
   display: block;
   width: 100%;
+  height: 300px;
 }
 
 .tiles article > .image:before {
@@ -405,6 +406,13 @@ body:not(.is-touch) .tiles article:hover > .image {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+body:not(.is-touch) .tiles article:hover .card-ribbon {
+  -moz-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
 }
 
 body:not(.is-touch) .tiles article:hover > .image:before {
@@ -543,20 +551,88 @@ h4 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.card-ribbon {
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+  left: -10px;
+  width: 114px;
+  height: 112px;
+}
+.card-ribbon span {
+  position: absolute;
+  display: block;
+  width: 160px;
+  padding: 10px 0;
+  background-color: #3498db;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  left: -35px;
+  top: 25px;
+  transform: rotate(-45deg);
+}
+.card-ribbon::before,
+.card-ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border: 5px solid #2980b9;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.card-ribbon::before {
+  top: 0;
+  right: 0;
+}
+.card-ribbon::after {
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes colorchange {
+  0% {
+    color: rgb(199, 74, 137);
+  }
+  25% {
+    color: rgb(169, 46, 173);
+  }
+  50% {
+    color: rgb(73, 40, 148);
+  }
+  75% {
+    color: rgb(105, 133, 223);
+  }
+  100% {
+    color: rgb(80, 202, 206);
+  }
+}
 .upload{
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 1rem;
   padding: 1rem 2rem;
   margin-left: 12px;
+}
 
+.textbanner {
+  animation-name: colorchange;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
 .terms{
   box-sizing: border-box;
   background-color:rgb(159, 216, 216);
   border-radius: 1rem;
   padding: 1rem 2rem;
+}
 
+text-red {
+  color: red;
+  font-weight: bold;
 }
 .conditions{
   box-sizing: border-box;

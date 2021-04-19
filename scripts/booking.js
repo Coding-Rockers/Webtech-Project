@@ -1,7 +1,6 @@
 
 $(document).ready(function(){
     $('.booking').on('click',function(){
-        
         var carname = $(this).parent().siblings().children('.name').text();
         var rate = $(this).parent().children().children().children('.ion-md-pricetags').siblings().text().split(', ');
         var dailyrate = rate[0].slice(1,rate[0].indexOf('/'));
