@@ -220,21 +220,33 @@
 					isValid = false;
 
 				}
+				else{
+					$('#fullname').next().text("");
+				}
 				if (pickupDate == undefined || pickupDate == null || pickupDate == "") {
 					$('#pickup_date').next().text("Please select pickup date!");
 					isValid = false;
 
+				}
+				else{
+					$('#pickup_date').next().text("");
 				}
 				if (dropoffDate == undefined || dropoffDate == null || dropoffDate == "") {
 					$('#dropoff_date').next().text("Please select drop-off date!");
 					isValid = false;
 
 				}
+				else{
+					$('#dropoff_date').next().text("");
+				}
 				if (license == undefined || license == null || license == "") {
 					debugger;
 					$('#file').next().next().text("Please upload driving license");
 					isValid = false;
 
+				}
+				else{
+					$('#file').next().next().text("");
 				}
 
 
