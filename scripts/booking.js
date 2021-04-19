@@ -10,5 +10,5 @@ $(document).ready(function(){
         sessionStorage.setItem('current_booking_cardata', JSON.stringify(car_data));
         window.location.replace("booking.html");
 
-    })
+    });
 });

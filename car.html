@@ -24,7 +24,7 @@
             <span class ="fa fa-bars"></span>
         </label>
         <div class="right"> 
-        <h4 class="welcome">Welcome John</h4>
+        <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
         <br>
         <ul>
            <li>
@@ -42,9 +42,9 @@
         <a href = "booking_form.html">Manage Booking</a>
 
     </li>
-    <li><a href ="#">About Us</a></li>
-    <li><a href ="#">Contact Us</a></li>
-    <li><a href ="#">SIGN IN / JOIN</a></li>
+    <li><a href ="Aboutus.html">About Us</a></li>
+      <li><a href ="Contactus.html">Contact Us</a></li>
+      <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
     </ul>
   </div>
     </nav>
@@ -322,7 +322,26 @@
         overlay.classList.remove('active')
     }
 
+
+    $(document).ready(function(){
+        debugger;
+
+        var fullname = sessionStorage.getItem('fullname');
+
+        if(fullname != undefined && fullname != "" && fullname != null){
+            $('#welcome_msg').html('Welcome ' + fullname);
+            $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+        }
+
+        
+    });
+
     
+    function Logout(){
+    sessionStorage.removeItem('email')
+    sessionStorage.removeItem('fullname')
+    window.location.replace("logout.html");
+  }
 
 </script>   
 </body>

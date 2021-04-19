@@ -141,19 +141,25 @@
 
 <script>
   $(document).ready(function(){
-    debugger;
     var fullname = sessionStorage.getItem('fullname');
     if(fullname != undefined && fullname != "" && fullname != null){
       $('#welcome_msg').html('Welcome ' + fullname);
+      $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
     }
     
   });
+
+  function Logout(){
+    sessionStorage.removeItem('email')
+    sessionStorage.removeItem('fullname')
+    window.location.replace("logout.html");
+  }
 </script>
   
 <script type="text/javascript">
 $(function() {
   $('.gallery-slideshow').slideshow({
-    interval: 2000
+    interval: 5000
   });
 });
   var _gaq = _gaq || [];

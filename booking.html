@@ -230,6 +230,7 @@
 
 
         $('.date_picker').on('change',function(){
+			debugger;
 			pickup=$('#pickup_date').val();
 			dropoff=$('#dropoff_date').val();
 			if(pickup!=undefined && pickup!=null && pickup!="" && dropoff!=undefined && dropoff!=null && dropoff!=""){
@@ -256,7 +257,8 @@
 						
 						rate=car_data["dailyrate"];
 					}
-					else if(diffindays<29){
+					else if(diffindays<30){
+						debugger;
 						
 						diff=diffindays/week;
 						rate =car_data["weeklyrate"];
@@ -269,6 +271,7 @@
 
 					cost=(rate*diff).toFixed(2);
 					final="Total Cost : $"+cost;
+					debugger;
 					document.getElementById('total_cost').innerHTML=final;
 					
 					//var diff=Math.abs(new Date($('#dropoff_date').val()).getTime()-new Date($('#pickup_date').val()).getTime())

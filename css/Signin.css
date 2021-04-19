@@ -1,14 +1,27 @@
 html,
-body.signin {
-  background-image: url("../images/Lamborghini\ New\ Sian\ Roadster.jpg");
+body.signin,
+body.signup,
+body.logout {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
-  font-family: "Numans", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+body.signin {
+  background-image: url("../images/Lamborghini_New_Sian_Roadster.jpg");
+}
+
+body.signup {
+  background-image: url("../images/Lamborghini-Aventador.jpg");
+}
+
+body.logout {
+  background-image: url("../images/white-car.jpg");
 }
 
 .container {
-  height: 100%;
+  height: 80%;
   align-content: center;
 }
 
@@ -83,3 +96,28 @@ input:focus {
   margin-left: 4px;
 }
 
+<<<<<<< HEAD
+=======
+.text-red {
+  color: red;
+  font-weight: bold;
+}
+
+.announcement {
+  margin-top: 40px;
+  border-style: solid;
+  padding: 10px 10px;
+  width: 500px;
+  color: #910808;
+  /* margin-left: 300px; */
+  border-color: #d3d3e6;
+  background-color: rgb(246 252 250);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
+>>>>>>> 4ecc137ac18cc8a086b03b378c21f31272fbfb35
