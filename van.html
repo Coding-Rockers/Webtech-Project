@@ -35,7 +35,6 @@
         <label for="btn" class="icon">
             <span class="fa fa-bars"></span>
         </label>
-<<<<<<< HEAD
         <div class="right"> 
             <h4 class="welcome" id="welcome_msg">Welcome Guest</h4>
         <br>
@@ -60,32 +59,6 @@
       <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
     </ul>
   </div>
-=======
-        <div class="right">
-            <h4 class="welcome">Welcome John</h4>
-            <br>
-            <ul>
-                <li>
-                    <a href="#">Book a Vehicle</a>
-                    <ul>
-                        <li><a class="nav-link" href="car.html">Car</a></li>
-
-                        <li><a class="nav-link" href="suv.html">SUV</a></li>
-                        <li><a class="nav-link" href="van.html">Van</a></li>
-
-                    </ul>
-
-                </li>
-                <li>
-                    <a href="booking_form.html">Manage Booking</a>
-
-                </li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">SIGN IN / JOIN</a></li>
-            </ul>
-        </div>
->>>>>>> c157555e578b31ac3f8ab97e6a06872f9e415b90
     </nav>
 
 
@@ -157,9 +130,7 @@
 
 
             <div class="card">
-                <div class="card-ribbon">
-                    <span>most popular</span>
-                </div>
+
                 <div class="img">
                     <img src="images/van -ford2020.jpg">
                 </div>
@@ -237,7 +208,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
     <script src="scripts/booking.js"></script>
-<<<<<<< HEAD
 <script>
     const openModalButtons = document.querySelectorAll('[data-modal-target]')
     const closeModalButtons = document.querySelectorAll('[data-close-button]')
@@ -309,49 +279,3 @@
 </script>   
 </body>
 </html>
-=======
-    
-    <script>
-        const openModalButtons = document.querySelectorAll('[data-modal-target]')
-        const closeModalButtons = document.querySelectorAll('[data-close-button]')
-        const overlay = document.getElementById('overlay')
-
-        openModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = document.querySelector(button.dataset.modalTarget)
-                openModal(modal)
-            })
-        })
-
-        overlay.addEventListener('click', () => {
-            const modals = document.querySelectorAll('.modal.active')
-            modals.forEach(modal => {
-                closeModal(modal)
-            })
-        })
-
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal')
-                closeModal(modal)
-            })
-        })
-
-        function openModal(modal) {
-            if (modal == null) return
-            modal.classList.add('active')
-            overlay.classList.add('active')
-
-        }
-
-        function closeModal(modal) {
-            if (modal == null) return
-            modal.classList.remove('active')
-            overlay.classList.remove('active')
-        }
-
-    </script>
-</body>
-
-</html>
->>>>>>> c157555e578b31ac3f8ab97e6a06872f9e415b90
