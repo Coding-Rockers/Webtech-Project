@@ -296,6 +296,7 @@ nav ul ul ul li {
 .tiles article > .image img {
   display: block;
   width: 100%;
+  height: 300px;
 }
 
 .tiles article > .image:before {
@@ -410,6 +411,13 @@ body:not(.is-touch) .tiles article:hover > .image {
   transform: scale(1.1);
 }
 
+body:not(.is-touch) .tiles article:hover .card-ribbon {
+  -moz-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
 body:not(.is-touch) .tiles article:hover > .image:before {
   background-color: #333333;
   opacity: 0.35;
@@ -492,92 +500,71 @@ body.is-touch .tiles article .content {
   margin-bottom: 15px;
 }
 
-
-html,
-body.signin {
-  background-image: url("../images/Lamborghini_New_Sian_Roadster.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  font-family: "Numans", sans-serif;
-}
-
-.container {
-  height: 100%;
-  align-content: center;
-}
-
-.card {
-  height: 370px;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 400px;
-  background-color: rgba(0, 0, 0, 0.5) !important;
-}
-
-.social_icon span {
-  font-size: 60px;
-  margin-left: 10px;
-  color: #ffc312;
-}
-
-.social_icon span:hover {
-  color: white;
-  cursor: pointer;
-}
-
-.card-header h3 {
-  color: white;
-}
-
-.social_icon {
+.card-ribbon {
   position: absolute;
-  right: 20px;
-  top: -45px;
+  overflow: hidden;
+  top: -10px;
+  left: -10px;
+  width: 114px;
+  height: 112px;
+}
+.card-ribbon span {
+  position: absolute;
+  display: block;
+  width: 160px;
+  padding: 10px 0;
+  background-color: #3498db;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  text-align: center;
+  left: -35px;
+  top: 25px;
+  transform: rotate(-45deg);
+}
+.card-ribbon::before,
+.card-ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
+  border: 5px solid #2980b9;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.card-ribbon::before {
+  top: 0;
+  right: 0;
+}
+.card-ribbon::after {
+  bottom: 0;
+  left: 0;
 }
 
-.input-group-prepend span {
-  width: 50px;
-  background-color: #ffc312;
-  color: black;
-  border: 0 !important;
+@keyframes colorchange {
+  0% {
+    color: rgb(199, 74, 137);
+  }
+  25% {
+    color: rgb(169, 46, 173);
+  }
+  50% {
+    color: rgb(73, 40, 148);
+  }
+  75% {
+    color: rgb(105, 133, 223);
+  }
+  100% {
+    color: rgb(80, 202, 206);
+  }
 }
 
-input:focus {
-  outline: 0 0 0 0 !important;
-  box-shadow: 0 0 0 0 !important;
+.textbanner {
+  animation-name: colorchange;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
 }
-
-.remember {
-  color: white;
-}
-
-.remember input {
-  width: 20px;
-  height: 20px;
-  margin-left: 15px;
-  margin-right: 5px;
-}
-
-.login_btn {
-  color: black;
-  background-color: #ffc312;
-  width: 100px;
-}
-
-.login_btn:hover {
-  color: black;
-  background-color: white;
-}
-
-.links {
-  color: white;
-}
-
-.links a {
-  margin-left: 4px;
-}
-
 
 .text-red {
   color: red;
