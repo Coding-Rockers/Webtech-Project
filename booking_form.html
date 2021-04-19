@@ -48,7 +48,7 @@
 
 	<div id="booking" class="section">
 		<div class="section-center">
-			<button id="toggle" class="btn btn-primary">Toggle View Form</button>
+			<button id="toggle" class="btn btn-primary">Toggle Booking Form</button>
 			<div id="content" class="container">
 				<div class="row">
 					<span class="text-red" id="booking_msg"></span>
@@ -184,8 +184,7 @@ $(document).ready(function(){
 			document.getElementById("pickup_date").value = new Date(booked_car_data["pickupDate"]).toISOString().slice(0, 10);
 			document.getElementById("return_date").value = new Date(booked_car_data["dropoffDate"]).toISOString().slice(0, 10);
 			document.getElementById("booking").style.backgroundImage = "url("+booked_car_data['carImage']+")";
-			// document.getElementById("booking").style.backgroundImage = "url(images/car-kia.jpg)";
-			console.log(booked_car_data["carImage"]);
+
 
 			document.getElementById("viewBookingbtn").style.display = "none";
 			document.getElementById("ref").style.display = "inline";
