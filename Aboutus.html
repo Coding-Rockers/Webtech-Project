@@ -49,6 +49,7 @@
 
   <li><a href ="Aboutus.html">About Us</a></li>
   <li><a href ="Contactus.html">Contact Us</a></li>
+  <li style="display: none;" id="li_myprofile"><a href="myprofile.html">My Profile</a></li>
   <li><a href ="SignIn.html">SIGN IN / JOIN</a></li>
 
   </ul>
@@ -130,6 +131,7 @@ $(document).ready(function(){
         if(fullname != undefined && fullname != "" && fullname != null){
             $('#welcome_msg').html('Welcome ' + fullname);
             $('.right ul li:last').html('<a href="#" class="logout" onclick="Logout()" >LOG OUT</a>')
+            $('#li_myprofile').css('display', '');
         }
 
         $('.booking').on('click',function(){
