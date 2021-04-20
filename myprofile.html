@@ -196,6 +196,7 @@
         $(document).ready(function () {
             var fullname = sessionStorage.getItem('fullname');
             var email = sessionStorage.getItem('email');
+            var phone = sessionStorage.getItem('phone');
             if (fullname != undefined && fullname != "" && fullname != null) {
                 $('#welcome_msg').html('Welcome ' + fullname);
                 $('#name').html(fullname);
@@ -205,10 +206,14 @@
                 var name = fullname.split(' ');
                 $('#fname').val(name[0]);
                 $('#lname').val(name[1]);
+
             }
 
             if (email != undefined && email != "" && email != null) {
                 $('#email').val(email);
+            }
+            if (phone != undefined && phone != "" && phone != null) {
+                $('#phone').val(phone);
             }
 
         });
@@ -220,7 +225,6 @@
         }
 
         $("#profile_update").click(function (event) {
-
             var firstname = $('#fname').val();
             var lastname = $('#lname').val();
             var phone = $('#phone').val();
