@@ -385,7 +385,7 @@ nav ul ul ul li {
   background-color: #7ecaf6;
 }
 
-.tiles article.style3 > .image:before {
+.tiles article.style3 > .image::before {
   background-color: #7bd0c1;
 }
 
@@ -610,7 +610,7 @@ h4 {
     color: rgb(80, 202, 206);
   }
 }
-.upload{
+.upload {
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 1rem;
@@ -623,9 +623,9 @@ h4 {
   animation-duration: 4s;
   animation-iteration-count: infinite;
 }
-.terms{
+.terms {
   box-sizing: border-box;
-  background-color:rgb(159, 216, 216);
+  background-color: rgb(159, 216, 216);
   border-radius: 1rem;
   padding: 1rem 2rem;
   margin-top: 35px;
@@ -635,9 +635,9 @@ text-red {
   color: red;
   font-weight: bold;
 }
-.conditions{
+.conditions {
   box-sizing: border-box;
   border-radius: 1rem;
   padding: 1rem 2rem;
-  background-color:#fff;
+  background-color: #fff;
 }
