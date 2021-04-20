@@ -130,7 +130,9 @@
             $("#password").css('border-color', 'black');
             $("#email_msg").html('');
             $("#password_msg").html('');
-            $('#login_error_msg').html('')
+            $('#login_error_msg').html('');
+
+            var emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\b/;
 
             email = $("#email").val();
             password = $("#password").val();
@@ -140,6 +142,11 @@
                 $("#email").css('border-color', 'red');
                 $("#email_msg").html('Please enter email!!');
                 isValid = false
+            }
+            else if (!emailPattern.test(email)) {
+                $("#email").css('border-color', 'red');
+                $("#email_msg").html('Must be a valid email address!!');
+                isValid = false;
             }
 
             if (password == "" || password == undefined) {
@@ -167,8 +174,8 @@
                 }
 
                 if (isValid) {
-                    sessionStorage.setItem('email', login_data[i].email)
-                    sessionStorage.setItem('fullname', login_data[i].firstname + " " + login_data[i].lastname)
+                    sessionStorage.setItem('email', login_data[i].email);
+                    sessionStorage.setItem('fullname', login_data[i].firstname + " " + login_data[i].lastname);
                     window.location.replace("index.html");
                 }
                 else {
@@ -179,19 +186,7 @@
 
 
         });
-        //     $("div.card").on("mouseenter", function () {
-        //         $("div.card").animate({height: '+= 50px',
-        //                 width: '+=50px',
-        //                 borderRadius: '3%'
-        //             },2000);
-        // }
-        // ).on("mouseleave", function () {
-        //         $("div.card").animate({height: '-= 50px',
-        //                 width: '-=50px',
-        //                 borderRadius: '2%'
-        //             },2000);
-        // }
-        // );
+
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-36251023-1']);
         _gaq.push(['_setDomainName', 'jqueryscript.net']);

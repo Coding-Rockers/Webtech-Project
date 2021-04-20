@@ -45,7 +45,7 @@
   border: 1px solid black;
   z-index: 1;
   background-color: white;
-  width: 400px;
+  width: 1000px;
   max-width: 80%;
   font-size: 13px;
 }
@@ -55,6 +55,8 @@
   padding: 10px 10px;
   font-weight: 600;
   margin-left: 40px;
+  background-color: rgb(178, 186, 202);
+  color:crimson;
 }
 
 .modal.active {
